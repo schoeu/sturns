@@ -31,485 +31,1083 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        
+        <p></p>
         .s_turns{
             width: 100%;
             overflow: hidden;
             position: relative;
         }
-        .s_turnsLists&gt;div{
+        .s_turnsLists&amp;gt;div{
             float: left;
         }
         .s_turnsLists,.s_turnsListsV{
             overflow: hidden;
             width: 100%;
         }
-        .s_turnsListsV&gt;div{
+        .s_turnsListsV&amp;gt;div{
             display: block;
         }
         .transition2s{
             -webkit-transition:  all .3s ease-out;
             -moz-transition:  all .3s ease-out;
             transition: all .3s ease-out;
-        }
+        }&lt;/p&gt;
 
+&lt;pre&gt;&lt;code&gt;    .s_indicator {
+        height: 20px!important;
+        margin: 0 auto;
+        position: absolute;
+        width: 100%;
+        bottom: 0px;
+    }
 
-        .s_indicator {
-            height: 20px!important;
-            margin: 0 auto;
-            position: absolute;
-            width: 100%;
-            bottom: 0px;
-        }
+    .s_turnsPointerClass{
+        width: 10px!important;
+        height: 10px!important;
+        border-radius: 5px!important;
+        background-color: rgba(0,0,0,0.3)!important;
+        z-index: 999!important;
+    }
 
-        .s_turnsPointerClass{
-            width: 10px!important;
-            height: 10px!important;
-            border-radius: 5px!important;
-            background-color: rgba(0,0,0,0.3)!important;
-            z-index: 999!important;
-        }
+    .s_indicator&amp;gt;div&amp;gt;div {
+        float: left;
+        margin-left: 5px;
+    }
 
-        .s_indicator&gt;div&gt;div {
-            float: left;
-            margin-left: 5px;
-        }
+    .s_indicator&amp;gt;div {
+        margin: 0 auto;
+        background-color: transparent!important;
+        max-width: 90%;
+        background-image: transparent!important;
+    }
+    .s_indi_active{
+        background-color: rgba(0,0,0,0.7)!important;
+    }
 
-        .s_indicator&gt;div {
-            margin: 0 auto;
-            background-color: transparent!important;
-            max-width: 90%;
-            background-image: transparent!important;
-        }
-        .s_indi_active{
-            background-color: rgba(0,0,0,0.7)!important;
-        }
+    /***demo css***/
+    body{background-color: #ffffff;margin:0;padding:0;font-size:16px;box-sizing:border-box;color: rgb(50,50,50);}a,li,p,div,ul,nav,span,img,header{-webkit-user-select:none;user-select:none;-webkit-text-size-adjust:none;text-size-adjust:none;outline:0;/* padding: 10px; */}li{list-style:none;border:0}
 
-        /***demo css***/
-        body{background-color: #ffffff;margin:0;padding:0;font-size:16px;box-sizing:border-box;color: rgb(50,50,50);}a,li,p,div,ul,nav,span,img,header{-webkit-user-select:none;user-select:none;-webkit-text-size-adjust:none;text-size-adjust:none;outline:0;/* padding: 10px; */}li{list-style:none;border:0}
+    .singleDemo,.singleDemoCenter,.singleDemoV,.singleDemoVCenter{
+        height: 150px;
+    }
 
-        .singleDemo,.singleDemoCenter,.singleDemoV,.singleDemoVCenter{
-            height: 150px;
-        }
+    div,p,body{
+        -webkit-tap-highlight-color:rgba(0,0,0,0);
+        font-family: Helvetica,STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Arial;
+    }
+    body{
+        padding: 20px;
+        background-color: rgb(140, 209, 255);
+    }
 
-        div,p,body{
-            -webkit-tap-highlight-color:rgba(0,0,0,0);
-            font-family: Helvetica,STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Arial;
-        }
-        body{
-            padding: 20px;
-            background-color: rgb(140, 209, 255);
-        }
+    .singleDemo&amp;gt;div,.singleDemoCenter&amp;gt;div,.singleDemoV&amp;gt;div,.singleDemoVCenter&amp;gt;div{
+        height: 150px;
+        text-align: center;
+    }
+    .s_turnsLists&amp;gt;div,.s_turnsListsV&amp;gt;div{
+        background-image: -webkit-linear-gradient(45deg, #CAE1FF, #A1BBFF);
+        background-image: -moz-linear-gradient(45deg, #CAE1FF, #A1BBFF);
+        background-image: -ms-linear-gradient(45deg, #CAE1FF, #A1BBFF);
+        background-image: -o-linear-gradient(45deg, #CAE1FF, #A1BBFF);
+        background-image: linear-gradient(45deg, #CAE1FF, #A1BBFF);
+    }
+    .picDemo img{
+        width: 100%;
+        height: 150px;
+        border-left: 1px solid #FFF;
+    }
 
-        .singleDemo&gt;div,.singleDemoCenter&gt;div,.singleDemoV&gt;div,.singleDemoVCenter&gt;div{
-            height: 150px;
-            text-align: center;
-        }
-        .s_turnsLists&gt;div,.s_turnsListsV&gt;div{
-            background-image: -webkit-linear-gradient(45deg, #CAE1FF, #A1BBFF);
-            background-image: -moz-linear-gradient(45deg, #CAE1FF, #A1BBFF);
-            background-image: -ms-linear-gradient(45deg, #CAE1FF, #A1BBFF);
-            background-image: -o-linear-gradient(45deg, #CAE1FF, #A1BBFF);
-            background-image: linear-gradient(45deg, #CAE1FF, #A1BBFF);
-        }
-        .picDemo img{
-            width: 100%;
-            height: 150px;
-            border-left: 1px solid #FFF;
-        }
+    .picDemo{
+        height: 150px;
+    }
+    .demo{
+        margin-bottom: 50px;
+        max-width: 640px;
+        margin: 50px auto;
+    }
+    .singleDemo&amp;gt;div&amp;gt;div:nth-child(2){
+        background-color: #aaaaff;
+    }
+    .singleDemo&amp;gt;div&amp;gt;div:nth-child(3){
+        background-color: #e1ba53;
+    }
+    .sturns_active{
+        color:#FFF!important;
+        transition: all .4s;
+    }
+    .singleDemo p,.singleDemoCenter p,.singleDemoV p,.singleDemoVCenter p{
+        line-height: 150px;
+        font-size: 38px;
+        margin: 0;
+    }
 
-        .picDemo{
-            height: 150px;
-        }
-        .demo{
-            margin-bottom: 50px;
-            max-width: 640px;
-            margin: 50px auto;
-        }
-        .singleDemo&gt;div&gt;div:nth-child(2){
-            background-color: #aaaaff;
-        }
-        .singleDemo&gt;div&gt;div:nth-child(3){
-            background-color: #e1ba53;
-        }
-        .sturns_active{
-            color:#FFF!important;
-            transition: all .4s;
-        }
-        .singleDemo p,.singleDemoCenter p,.singleDemoV p,.singleDemoVCenter p{
-            line-height: 150px;
-            font-size: 38px;
-            margin: 0;
-        }
+    #prev,#next{
+        line-height: 30px;
+        border: 1px solid #ace;
+        width: 40px;
+    }
+    #btns{
+        margin: 20px auto;
+        text-align: center;
+    }
 
-        #prev,#next{
-            line-height: 30px;
-            border: 1px solid #ace;
-            width: 40px;
-        }
-        #btns{
-            margin: 20px auto;
-            text-align: center;
-        }
+    .pp{
+        width: 15px;
+        height: 15px;
+        background-color: yellowgreen;
+    }
 
-        .pp{
-            width: 15px;
-            height: 15px;
-            background-color: yellowgreen;
-        }
+    .pac{
+        background-color: yellow;
+    }
+    .activeC{
+        background-color: #e1ba53!important;
+    }
+    .pos{
+        top: 20px;
+    }
 
-        .pac{
-            background-color: yellow;
-        }
-        .activeC{
-            background-color: #e1ba53!important;
-        }
-        .pos{
-            top: 20px;
-        }
+    pre{
+        background-color: rgb(64,64,64);
+        color: #FFF;
+        padding: 10px;
+        overflow: scroll;
+        font-size: 14px;
+        text-indent:-2em;
+        font-family: Helvetica,STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Arial;
+    }
+    .spec{
+        color: rgb(202,158,77);
+    }
+    .string{
+        color: rgb(52,174,52);
+    }
+    .temp{
+        color: rgb(155,194,142);
+    }
+    .num{
+        color: rgb(250,113,187);
+    }
+    h1{
+        text-align: center;
+        color: #FFF;
+        line-height: 70px;
+        border-bottom: 1px solid #FFF;
+    }
 
-        pre{
-            background-color: rgb(64,64,64);
-            color: #FFF;
-            padding: 10px;
-            overflow: scroll;
-            font-size: 14px;
-            text-indent:-2em;
-            font-family: Helvetica,STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Arial;
-        }
-        .spec{
-            color: rgb(202,158,77);
-        }
-        .string{
-            color: rgb(52,174,52);
-        }
-        .temp{
-            color: rgb(155,194,142);
-        }
-        .num{
-            color: rgb(250,113,187);
-        }
-        h1{
-            text-align: center;
-            color: #FFF;
-            line-height: 70px;
-            border-bottom: 1px solid #FFF;
-        }
+    .settings,.events,.propertys {
+        color: #FFF;
+    }
 
-        .settings,.events,.propertys {
-            color: #FFF;
-        }
+    .pros {
+        padding: 10px;
+        border-bottom: 1px solid #FFF;
+    }
+    footer{
+        text-align: center;
+        font-size: 13px;
+        padding: 100px 0;
+        color: #FFF;
+    }
+&amp;lt;/style&amp;gt;&amp;lt;/head&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-        .pros {
-            padding: 10px;
-            border-bottom: 1px solid #FFF;
-        }
-        footer{
-            text-align: center;
-            font-size: 13px;
-            padding: 100px 0;
-            color: #FFF;
-        }
-    
+&lt;p&gt;&lt;body&gt;&lt;/p&gt;
 
-<h1>
-<a id="sturns-demo" class="anchor" href="#sturns-demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sturns demo</h1>
+&lt;h1&gt;Sturns demo&lt;/h1&gt;
 
-<pre><code> &lt;div class="singleDemo demo"&gt;
-    &lt;div&gt;
-        &lt;div&gt;&lt;p&gt;1&lt;/p&gt;&lt;/div&gt;
-        &lt;div&gt;&lt;p&gt;2&lt;/p&gt;&lt;/div&gt;
-        &lt;div&gt;&lt;p&gt;3&lt;/p&gt;&lt;/div&gt;
-        &lt;div&gt;&lt;p&gt;4&lt;/p&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;pre&gt;
-    &lt;span class="spec"&gt;var &lt;/span&gt;&lt;span class="temp"&gt;singleDemoCenter&lt;/span&gt; =&lt;span class="spec"&gt; new&lt;/span&gt; Sturns(&lt;span class="string"&gt;".singleDemo"&lt;/span&gt;);
-&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt; &amp;lt;div class=&amp;quot;singleDemo demo&amp;quot;&amp;gt;
+    &amp;lt;div&amp;gt;
+        &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;1&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+        &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;2&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+        &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;3&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+        &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;4&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;pre&amp;gt;
+    &amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt;var &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;temp&amp;quot;&amp;gt;singleDemoCenter&amp;lt;/span&amp;gt; =&amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt; new&amp;lt;/span&amp;gt; Sturns(&amp;lt;span class=&amp;quot;string&amp;quot;&amp;gt;&amp;quot;.singleDemo&amp;quot;&amp;lt;/span&amp;gt;);
+&amp;lt;/pre&amp;gt;
 
-&lt;div class="singleDemoCenter demo"&gt;
-    &lt;div&gt;
-        &lt;div&gt;&lt;p&gt;1&lt;/p&gt;&lt;/div&gt;
-        &lt;div&gt;&lt;p&gt;2&lt;/p&gt;&lt;/div&gt;
-        &lt;div&gt;&lt;p&gt;3&lt;/p&gt;&lt;/div&gt;
-        &lt;div&gt;&lt;p&gt;4&lt;/p&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
+&amp;lt;div class=&amp;quot;singleDemoCenter demo&amp;quot;&amp;gt;
+    &amp;lt;div&amp;gt;
+        &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;1&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+        &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;2&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+        &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;3&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+        &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;4&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
 
-&lt;pre&gt;
-    &lt;span class="spec"&gt;var &lt;/span&gt;&lt;span class="temp"&gt;singleDemoCenter&lt;/span&gt; =&lt;span class="spec"&gt; new&lt;/span&gt; Sturns(&lt;span class="string"&gt;".singleDemoCenter"&lt;/span&gt;,{
-        autoplay: &lt;span class="spec"&gt;false&lt;/span&gt;,
-        centerMode : &lt;span class="spec"&gt;true&lt;/span&gt;,
-        circle:&lt;span class="spec"&gt;false&lt;/span&gt;,
+&amp;lt;pre&amp;gt;
+    &amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt;var &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;temp&amp;quot;&amp;gt;singleDemoCenter&amp;lt;/span&amp;gt; =&amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt; new&amp;lt;/span&amp;gt; Sturns(&amp;lt;span class=&amp;quot;string&amp;quot;&amp;gt;&amp;quot;.singleDemoCenter&amp;quot;&amp;lt;/span&amp;gt;,{
+        autoplay: &amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt;false&amp;lt;/span&amp;gt;,
+        centerMode : &amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt;true&amp;lt;/span&amp;gt;,
+        circle:&amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt;false&amp;lt;/span&amp;gt;,
     });
-&lt;/pre&gt;
+&amp;lt;/pre&amp;gt;
 
-&lt;div class="singleDemoV demo"&gt;
-    &lt;div&gt;
-        &lt;div&gt;&lt;p&gt;1&lt;/p&gt;&lt;/div&gt;
-        &lt;div&gt;&lt;p&gt;2&lt;/p&gt;&lt;/div&gt;
-        &lt;div&gt;&lt;p&gt;3&lt;/p&gt;&lt;/div&gt;
-        &lt;div&gt;&lt;p&gt;4&lt;/p&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
- &lt;pre&gt;
-     &lt;span class="spec"&gt;var &lt;/span&gt;&lt;span class="temp"&gt;singleDemoV&lt;/span&gt; =&lt;span class="spec"&gt; new&lt;/span&gt; Sturns(&lt;span class="string"&gt;".singleDemoV"&lt;/span&gt;,{
-        autoplay: &lt;span class="spec"&gt;false&lt;/span&gt;,
-        circle : &lt;span class="spec"&gt;false&lt;/span&gt;,
-        isVertical:&lt;span class="spec"&gt;true&lt;/span&gt;,
-        pointer:&lt;span class="spec"&gt;false&lt;/span&gt;,
-        onScroll:&lt;span class="spec"&gt;function&lt;/span&gt;(idx,obj){
-            console.log(&lt;span class="string"&gt;"第"&lt;/span&gt;+idx+&lt;span class="string"&gt;"页， moveX: "&lt;/span&gt;+obj.moveX+&lt;span class="string"&gt;" moveY: "&lt;/span&gt;+obj.moveY);
+&amp;lt;div class=&amp;quot;singleDemoV demo&amp;quot;&amp;gt;
+    &amp;lt;div&amp;gt;
+        &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;1&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+        &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;2&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+        &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;3&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+        &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;4&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+ &amp;lt;pre&amp;gt;
+     &amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt;var &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;temp&amp;quot;&amp;gt;singleDemoV&amp;lt;/span&amp;gt; =&amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt; new&amp;lt;/span&amp;gt; Sturns(&amp;lt;span class=&amp;quot;string&amp;quot;&amp;gt;&amp;quot;.singleDemoV&amp;quot;&amp;lt;/span&amp;gt;,{
+        autoplay: &amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt;false&amp;lt;/span&amp;gt;,
+        circle : &amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt;false&amp;lt;/span&amp;gt;,
+        isVertical:&amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt;true&amp;lt;/span&amp;gt;,
+        pointer:&amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt;false&amp;lt;/span&amp;gt;,
+        onScroll:&amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt;function&amp;lt;/span&amp;gt;(idx,obj){
+            console.log(&amp;lt;span class=&amp;quot;string&amp;quot;&amp;gt;&amp;quot;第&amp;quot;&amp;lt;/span&amp;gt;+idx+&amp;lt;span class=&amp;quot;string&amp;quot;&amp;gt;&amp;quot;页， moveX: &amp;quot;&amp;lt;/span&amp;gt;+obj.moveX+&amp;lt;span class=&amp;quot;string&amp;quot;&amp;gt;&amp;quot; moveY: &amp;quot;&amp;lt;/span&amp;gt;+obj.moveY);
         }
     });
-&lt;/pre&gt;
+&amp;lt;/pre&amp;gt;
 
 
 
-&lt;div class="singleDemoVCenter demo"&gt;
-     &lt;div&gt;
-         &lt;div&gt;&lt;p&gt;1&lt;/p&gt;&lt;/div&gt;
-         &lt;div&gt;&lt;p&gt;2&lt;/p&gt;&lt;/div&gt;
-         &lt;div&gt;&lt;p&gt;3&lt;/p&gt;&lt;/div&gt;
-         &lt;div&gt;&lt;p&gt;4&lt;/p&gt;&lt;/div&gt;
-     &lt;/div&gt;
- &lt;/div&gt;
- &lt;pre&gt;
-    &lt;span class="spec"&gt;var &lt;/span&gt;&lt;span class="temp"&gt;singleDemoVCenter&lt;/span&gt; =&lt;span class="spec"&gt; new&lt;/span&gt; Sturns(&lt;span class="string"&gt;".singleDemoVCenter"&lt;/span&gt;,{
-        autoplay: &lt;span class="spec"&gt;false&lt;/span&gt;,
-        centerMode : &lt;span class="spec"&gt;true&lt;/span&gt;,
-        isVertical:&lt;span class="spec"&gt;true&lt;/span&gt;,
+&amp;lt;div class=&amp;quot;singleDemoVCenter demo&amp;quot;&amp;gt;
+     &amp;lt;div&amp;gt;
+         &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;1&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+         &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;2&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+         &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;3&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+         &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;4&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+     &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;pre&amp;gt;
+    &amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt;var &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;temp&amp;quot;&amp;gt;singleDemoVCenter&amp;lt;/span&amp;gt; =&amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt; new&amp;lt;/span&amp;gt; Sturns(&amp;lt;span class=&amp;quot;string&amp;quot;&amp;gt;&amp;quot;.singleDemoVCenter&amp;quot;&amp;lt;/span&amp;gt;,{
+        autoplay: &amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt;false&amp;lt;/span&amp;gt;,
+        centerMode : &amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt;true&amp;lt;/span&amp;gt;,
+        isVertical:&amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt;true&amp;lt;/span&amp;gt;,
     });
-&lt;/pre&gt;
+&amp;lt;/pre&amp;gt;
 
- &lt;div class="picDemo demo"&gt;
-     &lt;div&gt;
-         &lt;div&gt;
-             &lt;img src="../images/2.png"/&gt;
-         &lt;/div&gt;
-         &lt;div&gt;
-             &lt;img src="../images/2.png"/&gt;
-         &lt;/div&gt;
-         &lt;div&gt;
-             &lt;img src="../images/2.png"/&gt;
-         &lt;/div&gt;
-     &lt;/div&gt;
- &lt;/div&gt;
- &lt;pre&gt;
-     &lt;span class="spec"&gt;var &lt;/span&gt;&lt;span class="temp"&gt;picDemo&lt;/span&gt; =&lt;span class="spec"&gt; new&lt;/span&gt; Sturns(&lt;span class="string"&gt;".picDemo"&lt;/span&gt;,{
-        centerMode: &lt;span class="spec"&gt;true&lt;/span&gt;,
-        isVertical : &lt;span class="spec"&gt;false&lt;/span&gt;,
-        centerModeScale:&lt;span class="num"&gt;0.6&lt;/span&gt;,
+ &amp;lt;div class=&amp;quot;picDemo demo&amp;quot;&amp;gt;
+     &amp;lt;div&amp;gt;
+         &amp;lt;div&amp;gt;
+             &amp;lt;img src=&amp;quot;../images/2.png&amp;quot;/&amp;gt;
+         &amp;lt;/div&amp;gt;
+         &amp;lt;div&amp;gt;
+             &amp;lt;img src=&amp;quot;../images/2.png&amp;quot;/&amp;gt;
+         &amp;lt;/div&amp;gt;
+         &amp;lt;div&amp;gt;
+             &amp;lt;img src=&amp;quot;../images/2.png&amp;quot;/&amp;gt;
+         &amp;lt;/div&amp;gt;
+     &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;pre&amp;gt;
+     &amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt;var &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;temp&amp;quot;&amp;gt;picDemo&amp;lt;/span&amp;gt; =&amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt; new&amp;lt;/span&amp;gt; Sturns(&amp;lt;span class=&amp;quot;string&amp;quot;&amp;gt;&amp;quot;.picDemo&amp;quot;&amp;lt;/span&amp;gt;,{
+        centerMode: &amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt;true&amp;lt;/span&amp;gt;,
+        isVertical : &amp;lt;span class=&amp;quot;spec&amp;quot;&amp;gt;false&amp;lt;/span&amp;gt;,
+        centerModeScale:&amp;lt;span class=&amp;quot;num&amp;quot;&amp;gt;0.6&amp;lt;/span&amp;gt;,
     });
-&lt;/pre&gt;
+&amp;lt;/pre&amp;gt;
 
-&lt;h1&gt;Settings&lt;/h1&gt;
+&amp;lt;h1&amp;gt;Settings&amp;lt;/h1&amp;gt;
 
-&lt;div class="settings"&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;activeClass&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; string&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; sturns_active&lt;/p&gt;
-        &lt;p&gt;设置当前焦点页的样式类名&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;animate&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; boolean&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; true&lt;/p&gt;
-        &lt;p&gt;轮播时，是否使用动画&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;autoplay&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; boolean&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; true&lt;/p&gt;
-        &lt;p&gt;是否自动轮播&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;autoplaySpeed&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; number&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; 3000&lt;/p&gt;
-        &lt;p&gt;轮播的间隔时间&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;boundary&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; number&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; 显示区域宽度的1/6&lt;/p&gt;
-        &lt;p&gt;滑动页面时触发翻动的临界值&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;centerMode&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; boolean&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; false&lt;/p&gt;
-        &lt;p&gt;是否初始化为居中模式&lt;/p&gt;
-    &lt;/div&gt;
+&amp;lt;div class=&amp;quot;settings&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;activeClass&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; string&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; sturns_active&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;设置当前焦点页的样式类名&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;animate&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; boolean&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; true&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;轮播时，是否使用动画&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;autoplay&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; boolean&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; true&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;是否自动轮播&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;autoplaySpeed&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; number&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; 3000&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;轮播的间隔时间&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;boundary&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; number&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; 显示区域宽度的1/6&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;滑动页面时触发翻动的临界值&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;centerMode&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; boolean&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; false&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;是否初始化为居中模式&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
 
-    &lt;div class="pros"&gt;
-        &lt;p&gt;centerMode&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; boolean&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; false&lt;/p&gt;
-        &lt;p&gt;是否初始化为居中模式&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;centerModeScale&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; number&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; 1&lt;/p&gt;
-        &lt;p&gt;初始化为居中模式时候页面居中时候的缩放比&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;circle&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; boolean&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; true&lt;/p&gt;
-        &lt;p&gt;是否初始化为循环模式&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;during&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; number&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; 400&lt;/p&gt;
-        &lt;p&gt;页面轮播时的动画持续时间&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;centerMode&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; boolean&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; false&lt;/p&gt;
-        &lt;p&gt;是否初始化为居中模式&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;direction&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; string&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; ltr&lt;/p&gt;
-        &lt;p&gt;自动轮播时，ltr:从左向右（从上向下），rtl:从右向左（从下向上）&lt;/p&gt;
-    &lt;/div&gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;centerMode&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; boolean&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; false&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;是否初始化为居中模式&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;centerModeScale&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; number&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; 1&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;初始化为居中模式时候页面居中时候的缩放比&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;circle&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; boolean&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; true&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;是否初始化为循环模式&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;during&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; number&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; 400&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;页面轮播时的动画持续时间&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;centerMode&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; boolean&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; false&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;是否初始化为居中模式&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;direction&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; string&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; ltr&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;自动轮播时，ltr:从左向右（从上向下），rtl:从右向左（从下向上）&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
 
-    &lt;div class="pros"&gt;
-        &lt;p&gt;hoverStop&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; boolean&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; true&lt;/p&gt;
-        &lt;p&gt;当鼠标悬停与轮播区域之上，是否停止自动轮播&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;isVertical&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; boolean&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; false&lt;/p&gt;
-        &lt;p&gt;是否初始化为垂直轮播模式&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;pointer&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; boolean&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; true&lt;/p&gt;
-        &lt;p&gt;是否自动生成页面指示器&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;pointerActiveClass&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; string&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; s_indi_active&lt;/p&gt;
-        &lt;p&gt;当前页面指示器的样式类名&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;pointerClass&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; string&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; s_turnsPointerClass&lt;/p&gt;
-        &lt;p&gt;页面指示器的默认样式类名&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;pointerPosition&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; string&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; s_indicator&lt;/p&gt;
-        &lt;p&gt;页面指示器的位置样式类名&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;preventDefault&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; boolean&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; true&lt;/p&gt;
-        &lt;p&gt;是否在滑动时，阻止默认事件&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;timingFn&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; string&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; ease-out&lt;/p&gt;
-        &lt;p&gt;轮播时，动画应用的动画时间函数，有ease，ease-in，ease-out，ease-in-out，还可以自行指定贝塞尔曲线函数，如：cubic-bezier(n,n,n,n)&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;direction&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; string&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; ltr&lt;/p&gt;
-        &lt;p&gt;自动轮播时，ltr:从左向右（从上向下），rtl:从右向左（从下向上）&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;direction&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; string&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; ltr&lt;/p&gt;
-        &lt;p&gt;自动轮播时，ltr:从左向右（从上向下），rtl:从右向左（从下向上）&lt;/p&gt;
-    &lt;/div&gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;hoverStop&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; boolean&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; true&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;当鼠标悬停与轮播区域之上，是否停止自动轮播&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;isVertical&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; boolean&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; false&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;是否初始化为垂直轮播模式&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;pointer&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; boolean&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; true&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;是否自动生成页面指示器&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;pointerActiveClass&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; string&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; s_indi_active&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;当前页面指示器的样式类名&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;pointerClass&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; string&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; s_turnsPointerClass&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;页面指示器的默认样式类名&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;pointerPosition&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; string&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; s_indicator&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;页面指示器的位置样式类名&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;preventDefault&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; boolean&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; true&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;是否在滑动时，阻止默认事件&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;timingFn&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; string&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; ease-out&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;轮播时，动画应用的动画时间函数，有ease，ease-in，ease-out，ease-in-out，还可以自行指定贝塞尔曲线函数，如：cubic-bezier(n,n,n,n)&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;direction&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; string&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; ltr&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;自动轮播时，ltr:从左向右（从上向下），rtl:从右向左（从下向上）&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;direction&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; string&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; ltr&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;自动轮播时，ltr:从左向右（从上向下），rtl:从右向左（从下向上）&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
 
-&lt;/div&gt;
+&amp;lt;/div&amp;gt;
 
-&lt;h1&gt;Propertys&lt;/h1&gt;
-&lt;div class="propertys"&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;currentIndex&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; number&lt;/p&gt;
-        &lt;p&gt;当前页面序号&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;mainEleW&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; number&lt;/p&gt;
-        &lt;p&gt;轮播区域的宽度&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;mainEleW&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; number&lt;/p&gt;
-        &lt;p&gt;轮播区域的高度&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-
-
-&lt;h1&gt;Events&lt;/h1&gt;
-&lt;div class="events"&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;onScroll&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; function&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; undefined&lt;/p&gt;
-        &lt;p&gt;轮播时的回调函数&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;onScrollBeforeStart&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; function&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; undefined&lt;/p&gt;
-        &lt;p&gt;轮播前的回调函数&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;onScrollEnd&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; function&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; undefined&lt;/p&gt;
-        &lt;p&gt;轮播完成后的回调函数&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;onScrollStart&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;类型:&lt;/strong&gt; function&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;默认:&lt;/strong&gt; undefined&lt;/p&gt;
-        &lt;p&gt;轮播开始时的回调函数&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h1&gt;Function&lt;/h1&gt;
-&lt;div class="events"&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;prev&lt;/p&gt;
-        &lt;p&gt;轮播到上一页&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="pros"&gt;
-        &lt;p&gt;next&lt;/p&gt;
-        &lt;p&gt;轮播到下一页&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-
-<p> schoeu.com </p>
+&amp;lt;h1&amp;gt;Propertys&amp;lt;/h1&amp;gt;
+&amp;lt;div class=&amp;quot;propertys&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;currentIndex&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; number&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;当前页面序号&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;mainEleW&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; number&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;轮播区域的宽度&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;mainEleW&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; number&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;轮播区域的高度&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
 
 
 
+&amp;lt;h1&amp;gt;Events&amp;lt;/h1&amp;gt;
+&amp;lt;div class=&amp;quot;events&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;onScroll&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; function&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; undefined&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;轮播时的回调函数&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;onScrollBeforeStart&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; function&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; undefined&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;轮播前的回调函数&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;onScrollEnd&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; function&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; undefined&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;轮播完成后的回调函数&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;onScrollStart&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;类型:&amp;lt;/strong&amp;gt; function&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;默认:&amp;lt;/strong&amp;gt; undefined&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;轮播开始时的回调函数&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
 
+&amp;lt;h1&amp;gt;Function&amp;lt;/h1&amp;gt;
+&amp;lt;div class=&amp;quot;events&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;prev&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;轮播到上一页&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;pros&amp;quot;&amp;gt;
+        &amp;lt;p&amp;gt;next&amp;lt;/p&amp;gt;
+        &amp;lt;p&amp;gt;轮播到下一页&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!--&lt;script type="text/javascript" src="../src/sLib.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="../src/sturns.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="../src/demo.js"&gt;&lt;/script&gt;--&gt;
+
+&lt;script type="text/javascript"&gt;
+/*
+ Version: 1.0.1
+ Author: Schoeu
+ update: 2015/3/3
+ Website: http://schoeu.com
+ Docs: http://schoeu.github.io/sturns
+ Repo: http://github.com/schoeu/sturns
+ Issues: http://github.com/schoeu/sturns/issues
+ */
+
+void function (window,s,undefined){
+    'use strict';
+
+    //兼容AMD模式
+    if (typeof define === 'function' &amp;&amp; define.amd) {
+        define(s);
+    } else if (typeof exports !== 'undefined') {
+        module.exports = s(window,undefined);
+    } else {
+        //绑定全局变量window
+        window.Sturns || (window.Sturns = s(window,undefined));
+    }
+
+}(window,function(window,undefined){
+    'use strict';
+
+    var Sturns = function(selector,options){
+        var centerModeScale;
+
+        options = options || {};
+
+        this.mainEle = document.querySelector(selector);
+
+        //如果主元素传参有误，则直接返回。
+        if(!this.mainEle){
+            return;
+        }
+
+        //滚动区域的宽度
+        this.mainEleW = this.mainEle.offsetWidth;
+
+        //滚动区域的高度
+        this.mainEleH = this.mainEle.offsetHeight;
+
+        //滚动页的父元素
+        this.scrollEle = this.mainEle.children[0];
+
+        //滚动页的所有元素
+        this.pages = this.scrollEle.children;
+
+        //当前页序号
+        this.currentIndex = 0;
+
+        //滚动页宽度
+        this.pageWidth = this.pages[0].offsetWidth;
+
+        //滚动页高度
+        this.pageHeight = this.pages[0].offsetHeight;
+
+        //是否已经滚动到边界
+        this.isBoundary = true;
+
+        //滚动也的个数，不包含克隆的元素节点
+        this.length = this.scrollEle.children.length;
+        this.prevPageIdx = 1;
+        if(typeof options === "object"){
+            //水平滚动的方向
+            // ltr：左到右   rtl：右到左  默认为从左到右
+            this.direction = options.direction || "ltr";
+            //滚动时的回调函数
+            this.onScroll = options.onScroll || undefined;
+            //当前页滚动完成的回调函数
+            this.onScrollEnd = options.onScrollEnd || undefined;
+            //当前页滚动开始时的回调函数
+            this.onScrollStart = options.onScrollStart || undefined;
+            //当前页滚动开始之前的回调函数
+            this.onScrollBeforeStart = options.onScrollBeforeStart || undefined;
+            //是否自动轮播 Boolean值
+            this.autoplay = options.autoplay === false ? false : true;
+
+            //水平滚动 or 垂直滚动
+            this.isVertical = options.isVertical === true ? true : false;
+
+            //当前页滚动多少像素则判定滑到下一页，
+            // int值，默认为当前页宽度的六分之一。
+            this.boundary = parseInt(options.boundary) || (this.isVertical ? this.mainEleH : this.mainEleW)/6;
+            this.prevBoundary = this.boundary;   //用于换页时判断是否循环
+
+            //鼠标悬停在插件区域则停止自动轮播， Boolean值
+            this.hoverStop = options.hoverStop === false ? false : true;
+
+            //是否启用居中模式，默认为不启用。
+            // 启用后当前页的左右两边可以看到前一个和后一个滚动页的一边。
+            this.centerMode = options.centerMode === true ? true : false;
+
+            //滚动时使用启用动画，默认为启用
+            this.animate = options.animate === false ? false : true;
+
+            //是否启用滚动页指示器，默认为true
+            this.pointer = options.pointer === false ? false : true;
+
+            //默认的滚动页指示器小圆点的样式， 传入CSS样式类名字符串。
+            this.pointerClass = options.pointerClass || "s_turnsPointerClass";
+
+            //当前的滚动页的样式， 传入CSS样式类名字符串。
+            this.activeClass = options.activeClass || "sturns_active";
+
+            //当前的滚动页指示器小圆点的样式， 传入CSS样式类名字符串。
+            this.pointerActiveClass = options.pointerActiveClass || "s_indi_active";
+
+            //滚动页指示器的整体位置，传入CSS样式类名字符串
+            this.pointerPosition = options.pointerPosition || "s_indicator";
+
+            //是否启用循环模式，默认为启用
+            this.circle = options.circle === false ? false : true;
+
+            //启用居中模式后，当前页与非居中模式页面的宽度比
+            //范围为0~1之间的小数，默认为 0.85
+            centerModeScale = options.centerModeScale || 0.85;
+            this.centerModeScale = centerModeScale &gt; 1 ? 1 : centerModeScale;
+
+            //动画缓动曲线
+            this.timingFn = options.timingFn || "ease-out";
+
+            //动画持续时长
+            this.during = (options.during || 400);
+            this.duringSec = this.during/1000;
+
+            //自动轮播的时间间隔，以毫秒为单位
+            this.autoplaySpeed = (options.autoplaySpeed || 3000) + this.during;
+
+            //滑动时是否阻止默认事件
+            this.preventDefault = options.preventDefault === false ? false : true;
+
+        }
+
+        //插件初始化
+        this.init();
+    }
+
+    Sturns.prototype.init = function(){
+        var that = this,
+                scrollEleCls = that.isVertical ? "s_turnsListsV" : "s_turnsLists";
+
+        that.mainEle.classList.add("s_turns");
+        that.scrollEle.classList.add(scrollEleCls);
+
+        that.clipWidth = 0;
+        that.clipHeight = 0;
+        that.clipSize = 0;
+
+        that.moveRange = 0;
+
+        //居中模式时，当前页大小
+        if(that.centerMode){
+            if(that.isVertical){
+                that.pageHeight = that.mainEleH * that.centerModeScale;
+                that.clipHeight = +((that.mainEleH * (1-that.centerModeScale)/2).toFixed(1));
+            }else{
+                that.pageWidth = that.mainEleW * that.centerModeScale;
+                that.clipWidth = +((that.mainEleW * (1-that.centerModeScale)/2).toFixed(1));
+            }
+
+            that.clipSize = that.isVertical ? that.clipHeight : that.clipWidth;
+
+        }else{
+            that.centerModeScale = 1;
+        }
+
+        //滚动页大小
+        that.pageSize = that.isVertical ? that.pageHeight : that.pageWidth;
+
+        //公用修正
+        that.fix();
+
+        //特征检测
+        that.supports = (function(){
+            var u = navigator.userAgent;
+            var obj = {
+                //内核
+                isTrident: u.indexOf('Trident') &gt; 0,
+                isPresto: u.indexOf('Presto') &gt; 0,
+                isWebKit: u.indexOf('AppleWebKit') &gt; 0,
+                //浏览器
+                isIE: u.indexOf('MSIE') &gt; 0,
+                isFirefox: u.indexOf('Firefox') &gt; 0,
+                isOpera: u.indexOf('Opera')&gt;0 || u.indexOf('OPR') &gt; 0,
+                isChrome:u.indexOf('Chrome') &gt; 0 || u.indexOf('CriOS') &gt; 0,
+                //系统或平台
+                isAndroid:/android/ig.test(u),
+                isIPhone: /iphone/ig.test(u),
+                isIPad:/ipad/ig.test(u),
+            }
+            //设备
+            obj.isMobile = u.indexOf('Mobi')&gt;0 || obj.isIPhone || obj.isAndroid || obj.isIPad  ||u.indexOf('480')&gt;0;
+            obj.isTablet = u.indexOf('Tablet')&gt;0 || obj.isIPad || u.indexOf('Nexus 7')&gt;0;
+
+            //事件检测
+            obj.isTouchPad = (/hp-tablet/gi).test(u);
+            obj.hasTouch = 'ontouchstart' in window &amp;&amp; !obj.isTouchPad;
+
+            obj.evtStart = obj.hasTouch ? "touchstart" : "mousedown";
+            obj.evtMove = obj.hasTouch ? "touchmove" : "mousemove";
+            obj.evtEnd = obj.hasTouch ? "touchend" : "mouseup";
+            obj.translate = obj.hasTouch ? "WebkitTransform" : "transform";
+
+            return obj;
+        })();
+
+        //惰性加载
+        that.setTransFn = (function(){
+            if(that.isVertical){
+                return function(num){
+                    that.scrollEle.style[that.supports.translate] = "translate3d(0px,"+ num +"px,0px)";
+                }
+            }else{
+                return function(num){
+                    that.scrollEle.style[that.supports.translate] = "translate3d("+ num +"px,0px,0px)";
+                }
+            }
+        })();
+
+        //that.currentPage = -that.pageWidth*(that.centerMode ? 2 : 1);
+        that.currentPage = -that.fix.fixTOPage;
+        //使初始化的第一页为非克隆页
+        that.setTransFn(-that.fix.fixTOPage+that.clipSize);
+        that.currentIndex = Math.abs((that.currentPage+that.fix.fixOZPage)/that.pageSize);
+
+
+        //启动滑动监听
+        that.move();
+
+        //标记
+        that.each(that.scrollEle.children,function(idx){
+            this.setAttribute("data-sturns-index",idx+1);
+        });
+
+        //克隆前后两个元素并添加到容器中
+        var tempLastele = that.scrollEle.lastElementChild.cloneNode(true),
+                tempFirstele = that.scrollEle.firstElementChild.cloneNode(true);
+        that.scrollEle.insertBefore(tempLastele,that.scrollEle.firstElementChild);
+        that.scrollEle.appendChild(tempFirstele);
+
+        that.centerMode &amp;&amp; fixCenterMode.call(that,that);
+
+        //设置每个滚动也的宽度为页面宽度
+        that.each(that.pages,function(idx){
+            that.isVertical ?
+                    this.style.height = that.pageHeight+"px" :
+                    this.style.width = that.pageWidth+"px";
+        });
+
+        //设置滚动页父容器的宽度
+        //that.scrollEle.style.width = (that.centerMode? that.length+4 : that.length+2) * that.pageWidth+"px";
+        that.isVertical ?
+                that.scrollEle.style.height = (that.centerMode? that.length+4 : that.length+2) * that.pageHeight+"px" :
+                that.scrollEle.style.width = (that.centerMode? that.length+4 : that.length+2) * that.pageWidth+"px";
+
+        that.scrollEle.lastElementChild.classList.add("s_turnsClone");
+        that.scrollEle.firstElementChild.classList.add("s_turnsClone");
+
+        //开始轮播
+        that.start();
+
+        that.scrollEle.children[that.centerMode ? 2 : 1].classList.add(that.activeClass)
+
+        //如果启用指示器则初始化指示器
+        that.pointer &amp;&amp; that.indicator();
+
+        //如果制定了指示器类名则开始初始化指示器位置
+        that.s_indicator &amp;&amp; that.pointerPosition &amp;&amp; that.s_indicator.parentNode.classList.add(that.pointerPosition);
+
+        that.run = run;
+
+        //that.sUtils = sUtils;
+    };
+
+    //滑动事件处理
+    Sturns.prototype.move = function(){
+        var that = this,isDown = false,
+                downX = 0, downY= 0,  //按下鼠标或者开始触摸时的坐标
+                moveX = 0,moveY = 0,    //按下鼠标或者开始触摸后移动的坐标
+                changeX = 0,changeY = 0;    //上两组数据之间变化的差值
+
+        //开始拖拽事件监听
+        that.mainEle.addEventListener(that.supports.evtStart,function(e){
+            isDown = true;
+            downX = that.supports.hasTouch ? e.touches[0].clientX : e.clientX;
+            downY = that.supports.hasTouch ? e.touches[0].clientY : e.clientY;
+            that.stop();
+        });
+
+        //拖拽时事件监听器
+        that.mainEle.addEventListener(that.supports.evtMove,function(e){
+
+            //判断是否拖拽状态
+            if(isDown){
+                moveX = that.supports.hasTouch ? e.touches[0].clientX : e.clientX;
+                moveY = that.supports.hasTouch ? e.touches[0].clientY : e.clientY;
+                changeX = moveX - downX;
+                changeY = moveY - downY;
+                that.setTransFn(that.currentPage+(that.isVertical ? changeY : changeX)+that.clipSize);
+                that.onScroll &amp;&amp; that.onScroll.call(that,that.currentIndex,{moveX:moveX,moveY:moveY});
+            }
+            //阻止默认事件
+            that.preventDefault &amp;&amp; e.preventDefault();
+        });
+
+        //拖拽事件结束监听
+        that.mainEle.addEventListener(that.supports.evtEnd,function(e){
+            isDown = false;
+
+            //如果不是无缝轮播的情况下： 轮播到第一页则再不能左划，最后一页则不能右划
+            if(!that.circle){
+                if((that.currentIndex === 1 &amp;&amp; that.isBoundary &amp;&amp; (that.isVertical ? changeY : changeX) &gt; 0) ||
+                        (that.currentIndex === that.length &amp;&amp; that.isBoundary &amp;&amp; (that.isVertical ? changeY : changeX) &lt; 0)){
+                    that.boundary = that.mainEleW;
+                }
+            }
+
+            //滑动时判定边界
+            if(Math.abs((that.isVertical ? changeY : changeX)) &gt; that.boundary){
+                (that.isVertical ? changeY : changeX) &gt; 0 ? that.prev() : that.next();
+            }else{
+                that.animate &amp;&amp; that.ani();
+                that.setTransFn(that.currentPage+that.clipSize);
+            }
+
+            !that.circle &amp;&amp; that.isBoundary &amp;&amp; (that.boundary = that.prevBoundary);
+
+            that.start();
+        });
+
+        //用于hoverStop事件，只针对PC
+        that.mainEle.addEventListener("mouseover",function(){
+            if(that.hoverStop){
+                that.stop();
+            }
+        });
+        that.mainEle.addEventListener("mouseleave",function(){
+            that.start();
+        });
+    }
+
+    //兼容模块  TODO
+    Sturns.prototype.fix = function(){
+        this.fix = {
+            fixTOPage : (this.centerMode?2:1) * this.pageSize,
+            fixOZ : this.centerMode?1:0,
+            fixOZPage : (this.centerMode?1:0) * this.pageSize
+        }
+    }
+
+    //补间模块
+    Sturns.prototype.ani = function(){
+        var _ = this;
+        //this.scrollEle.classList.add("transition2s");
+        _.scrollEle.style.WebkitTransition = "all "+ _.duringSec +"s "+ _.timingFn;
+        setTimeout(function(){
+            //_.scrollEle.classList.remove("transition2s");
+            _.scrollEle.style.WebkitTransition = "";
+        },_.during)
+    }
+
+    //scrollBy 滚动多少距离
+    Sturns.prototype.scrollBy = function(pxNum){
+        this.animate &amp;&amp; this.ani();
+        this.setTransFn(this.currentPage+pxNum);
+    };
+
+    //scrollTo 滚动到哪里
+    Sturns.prototype.scrollTo = function(pxNum){
+        this.animate &amp;&amp; this.ani();
+        this.setTransFn(pxNum);
+    };
+
+    //scrollTo 滚动到指定页
+    Sturns.prototype.scrollToPage = function(pageNum){
+        this.animate &amp;&amp; this.ani();
+        //var realPageNum = this.length-(this.centerMode?4 : 2);
+        pageNum = pageNum &gt; this.length ? this.length : pageNum;
+
+        this.setTransFn(this.clipSize-this.pageSize*(pageNum+this.fix.fixOZ));
+
+        this.currentPage = -this.pageSize*(pageNum+this.fix.fixOZ);
+    };
+
+    //开始动画
+    Sturns.prototype.start = function(){
+        var _ = this;
+        if(_.hoverStop &amp;&amp; _.autoplay){
+            _.stop();
+            _.timer = setInterval(function(){_.run(_)},_.autoplaySpeed);
+        }
+    };
+
+    //滚动指示器初始化
+    Sturns.prototype.indicator = function(){
+        var _ = this,insertHtml = "";
+
+        var s_indicator = document.createElement("div");
+        s_indicator.className = "s_indicator";
+        s_indicator.innerHTML = "&lt;div&gt;&lt;/div&gt;";
+        _.mainEle.appendChild(s_indicator);
+        _.s_indicator = _.mainEle.querySelector(".s_indicator&gt;div");
+
+        for(var i= 0,l = this.length;i&lt;l;i++){
+            insertHtml += "&lt;div&gt;&lt;/div&gt;"
+        }
+        _.s_indicator.innerHTML = insertHtml;
+
+        _.each(_.s_indicator.children,function(el){
+            this.classList.add(_.pointerClass);
+        });
+
+        //设置指示器宽度 居中
+        _.s_indicator.style.width = (_.s_indicator.children[0].getBoundingClientRect().width + 5) * _.length+"px";
+
+        //初始化第一个指示点选中
+        _.s_indicator.children[0].classList.add(_.pointerActiveClass);
+
+    };
+
+    Sturns.prototype.each = function(obj,fn){
+        for(var i= 0,l = obj.length;i&lt;l;i++){
+            fn.call(obj[i],i,obj[i]);
+        }
+    };
+
+    Sturns.prototype.stop = function(obj,fn){
+        clearInterval(this.timer);
+        this.timer = null;
+    };
+
+    //上一页
+    Sturns.prototype.prev = function(){
+        if(/*this.isBoundary &amp;&amp;*/!this.circle &amp;&amp; this.currentIndex === 1){
+            return;
+        }else{
+            this.direction = "rtl";
+            this.run.call(this,this);
+        }
+    };
+
+    //下一页
+    Sturns.prototype.next = function(){
+        if(/*this.isBoundary &amp;&amp;*/ !this.circle &amp;&amp; this.currentIndex === this.length){
+            return;
+        }else{
+            this.direction = "ltr";
+            this.run.call(this,this);
+        }
+    };
+
+    //校正中心模式下动画效果
+    var fixCenterMode = function(o){
+        //如果是居中模式，则前端和后端分别克隆两个节点
+        o.scrollEle.appendChild(o.scrollEle.children[2].cloneNode(true));
+        o.scrollEle.insertBefore(o.scrollEle.lastElementChild.previousElementSibling
+                        .previousElementSibling.previousElementSibling.cloneNode(true),
+                o.scrollEle.firstElementChild);
+
+        //标识为克隆节点对象
+        o.scrollEle.lastElementChild.previousElementSibling.classList.add("s_turnsClone");
+        o.scrollEle.firstElementChild.nextElementSibling.classList.add("s_turnsClone");
+    }
+
+    //指示器运作方法
+    var indicatorMove = function(obj){
+        var children = obj.s_indicator.children;
+        obj.each(children,function(){
+            this.classList.remove(obj.pointerActiveClass);
+        });
+        children[obj.currentIndex-1].classList.add(obj.pointerActiveClass);
+    }
+
+
+    // 运动函数
+    var run = function(obj){
+        //方向处理
+        obj.moveRange = obj.direction === "rtl" ? obj.pageSize : -obj.pageSize;
+
+        var beforeNum = (obj.currentIndex+(obj.centerMode?0:1))%obj.length+1;
+        //滚动前回调
+        obj.onScrollBeforeStart &amp;&amp; obj.onScrollBeforeStart.call(obj,beforeNum);
+
+        //滚动时回调
+        obj.onScrollStart &amp;&amp; obj.onScrollStart.call(obj,beforeNum);
+
+        //obj.animate &amp;&amp; obj.scrollEle.classList.add("transition2s");
+        obj.animate &amp;&amp; obj.ani();
+
+        obj.setTransFn((obj.currentPage += (obj.moveRange))+obj.clipSize);
+        obj.prevPageIdx = obj.currentIndex;
+
+        //滚动后页数，无限滚动处理
+        setTimeout(function(){
+            var objLth = obj.length+2;
+            //obj.animate &amp;&amp; obj.scrollEle.classList.remove("transition2s");
+
+            //TODO
+            //从左向右滚动时，如果滚动到克隆页，则跳转到对应的非克隆页
+            if(obj.circle){
+                if(obj.currentPage == ((obj.centerMode?0:1)-objLth)*obj.pageSize) {
+                    obj.setTransFn(obj.clipSize - obj.fix.fixTOPage);
+                    obj.currentPage = -obj.fix.fixTOPage;
+                }
+                //从右向左滚动时，如果滚动到克隆页，则跳转到对应的非克隆页
+                if(obj.currentPage == -obj.fix.fixOZPage){
+                    obj.setTransFn(obj.clipSize-(objLth-(obj.centerMode?1:2))*obj.pageSize);
+                    obj.currentPage = -(objLth-(obj.centerMode?1:2))*obj.pageSize;
+                }
+
+            }else{
+                var ltrFlag = obj.currentPage == -(obj.fix.fixOZ+obj.length)*obj.pageSize,
+                        rtlFlag = obj.currentPage == -obj.fix.fixTOPage;
+
+                if(ltrFlag &amp;&amp; obj.direction === "ltr"){
+                    obj.direction = "rtl";
+                }
+
+                //从右向左滚动时，如果滚动到克隆页，则跳转到对应的非克隆页
+                if(rtlFlag &amp;&amp;  obj.direction === "rtl"){
+                    obj.direction = "ltr";
+                }
+
+                if(ltrFlag || rtlFlag){
+                    obj.isBoundary = true;
+                }else{
+                    //边界标志位复原为false。
+                    obj.isBoundary = false;;
+                }
+            }
+
+            //计算当前页
+            obj.currentIndex = Math.abs((obj.currentPage+obj.fix.fixOZPage)/obj.pageSize);
+
+            //滚动完成时回调
+            obj.onScrollEnd &amp;&amp; obj.onScrollEnd.call(obj,obj.currentIndex);
+
+            //指示器变动
+            obj.pointer &amp;&amp; indicatorMove.call(obj,obj);
+
+            //给当前页设置 active类
+            obj.each(obj.pages,function(i,ele){
+                ele.classList.remove(obj.activeClass);
+            });
+
+            obj.each(obj.pages,function(i,ele){
+                if(+ele.dataset.sturnsIndex == obj.currentIndex &amp;&amp;
+                        !ele.classList.contains("s_turnsClone")){
+                    ele.classList.add(obj.activeClass);
+                }
+            });
+        },obj.during);
+    }
+
+    return Sturns;
+});
+
+/**
+ * Created by schoeu on 2015/3/3.
+ */
+
+var singleDemo = new Sturns(".singleDemo");
+
+var singleDemoCenter = new Sturns(".singleDemoCenter",{
+    autoplay: false,
+    centerMode : true,
+    circle:false,
+});
+
+var singleDemoV = new Sturns(".singleDemoV",{
+    autoplay: false,
+    circle:false,
+    isVertical:true,
+    pointer:false,
+    onScroll:function(idx,obj){
+        //console.log("第"+idx+"页， moveX: "+obj.moveX+" moveY: "+obj.moveY);
+    }
+});
+
+var singleDemoVCenter = new Sturns(".singleDemoVCenter",{
+    autoplay: false,
+    centerMode : true,
+    isVertical:true,
+});
+
+var picDemo = new Sturns(".picDemo",{
+    centerMode : true,
+    isVertical:false,
+    centerModeScale: 0.6
+});
+
+&lt;/script&gt;
+
+&lt;p&gt;&lt;/body&gt;&lt;/p&gt;
       </section>
     </div>
 
