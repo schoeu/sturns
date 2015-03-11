@@ -1,0 +1,55 @@
+.s_turns{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.s_turnsLists>div{
+    float: left;
+}
+.s_turnsLists,.s_turnsListsV{
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    position: relative;
+}
+.s_turnsListsV>div{
+    display: block;
+}
+.transition2s{
+    -webkit-transition:  all .3s ease-out;
+    -moz-transition:  all .3s ease-out;
+    -ms-transition:  all .3s ease-out;
+    -o-transition:  all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+.s_indicator {
+    height: 20px!important;
+    margin: 0 auto;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+
+.s_turnsPointerClass{
+    width: 10px!important;
+    height: 10px!important;
+    border-radius: 5px!important;
+    background-color: rgba(0,0,0,0.3)!important;
+    z-index: 999!important;
+}
+
+.s_indicator>div>div {
+    float: left;
+    margin-left: 5px;
+}
+
+.s_indicator>div {
+    margin: 0 auto;
+    background-color: transparent!important;
+    max-width: 90%;
+    background-image: transparent!important;
+}
+.s_indi_active{
+    background-color: rgba(0,0,0,0.7)!important;
+}
