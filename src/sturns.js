@@ -12,7 +12,7 @@
 void function (window,s,undefined){
     'use strict';
 
-    //¼æÈİAMDÄ£Ê½
+    //å…¼å®¹AMDæ¨¡å¼
     if (typeof define === 'function' && define.amd) {
         define(function(){
             return s(window,undefined);
@@ -20,7 +20,7 @@ void function (window,s,undefined){
     } else if (typeof exports !== 'undefined') {
         module.exports = s(window,undefined);
     } else {
-        //°ó¶¨È«¾Ö±äÁ¿window
+        //ç»‘å®šå…¨å±€å˜é‡window
         window.Sturns || (window.Sturns = s(window,undefined));
     }
 
@@ -34,125 +34,125 @@ void function (window,s,undefined){
 
         this.mainEle = document.querySelector(selector);
 
-        //Èç¹ûÖ÷ÔªËØ´«²ÎÓĞÎó£¬ÔòÖ±½Ó·µ»Ø¡£
+        //å¦‚æœä¸»å…ƒç´ ä¼ å‚æœ‰è¯¯ï¼Œåˆ™ç›´æ¥è¿”å›ã€‚
         if(!this.mainEle){
             return;
         }
 
-        //¹ö¶¯ÇøÓòµÄ¿í¶È
+        //æ»šåŠ¨åŒºåŸŸçš„å®½åº¦
         this.mainEleW = this.mainEle.offsetWidth;
 
-        //¹ö¶¯ÇøÓòµÄ¸ß¶È
+        //æ»šåŠ¨åŒºåŸŸçš„é«˜åº¦
         this.mainEleH = this.mainEle.offsetHeight;
 
-        //¹ö¶¯Ò³µÄ¸¸ÔªËØ
+        //æ»šåŠ¨é¡µçš„çˆ¶å…ƒç´ 
         this.scrollEle = this.mainEle.children[0];
 
-        //¹ö¶¯Ò³µÄËùÓĞÔªËØ
+        //æ»šåŠ¨é¡µçš„æ‰€æœ‰å…ƒç´ 
         this.pages = this.scrollEle.children;
 
-        //µ±Ç°Ò³ĞòºÅ
+        //å½“å‰é¡µåºå·
         this.currentIndex = 0;
 
-        //¹ö¶¯Ò³¿í¶È
+        //æ»šåŠ¨é¡µå®½åº¦
         this.pageWidth = this.pages[0].offsetWidth;
 
-        //¹ö¶¯Ò³¸ß¶È
+        //æ»šåŠ¨é¡µé«˜åº¦
         this.pageHeight = this.pages[0].offsetHeight;
 
-        //ÊÇ·ñÒÑ¾­¹ö¶¯µ½±ß½ç
+        //æ˜¯å¦å·²ç»æ»šåŠ¨åˆ°è¾¹ç•Œ
         this.isBoundary = true;
 
-        //¹ö¶¯Ò²µÄ¸öÊı£¬²»°üº¬¿ËÂ¡µÄÔªËØ½Úµã
+        //æ»šåŠ¨ä¹Ÿçš„ä¸ªæ•°ï¼Œä¸åŒ…å«å…‹éš†çš„å…ƒç´ èŠ‚ç‚¹
         this.length = this.scrollEle.children.length;
         this.prevPageIdx = 1;
         if(typeof options === "object"){
-            //Ë®Æ½¹ö¶¯µÄ·½Ïò
-            // ltr£º×óµ½ÓÒ   rtl£ºÓÒµ½×ó  Ä¬ÈÏÎª´Ó×óµ½ÓÒ
+            //æ°´å¹³æ»šåŠ¨çš„æ–¹å‘
+            // ltrï¼šå·¦åˆ°å³   rtlï¼šå³åˆ°å·¦  é»˜è®¤ä¸ºä»å·¦åˆ°å³
             this.direction = options.direction || "ltr";
-            //¹ö¶¯Ê±µÄ»Øµ÷º¯Êı
+            //æ»šåŠ¨æ—¶çš„å›è°ƒå‡½æ•°
             this.onScroll = options.onScroll || undefined;
 
-            //µ±Ç°Ò³¹ö¶¯Íê³ÉÖ®Ç°µÄ»Øµ÷º¯Êı
+            //å½“å‰é¡µæ»šåŠ¨å®Œæˆä¹‹å‰çš„å›è°ƒå‡½æ•°
             this.onScrollBeforeEnd = options.onScrollBeforeEnd || undefined;
 
-            //µ±Ç°Ò³¹ö¶¯Íê³ÉµÄ»Øµ÷º¯Êı
+            //å½“å‰é¡µæ»šåŠ¨å®Œæˆçš„å›è°ƒå‡½æ•°
             this.onScrollEnd = options.onScrollEnd || undefined;
-            //µ±Ç°Ò³¹ö¶¯¿ªÊ¼Ê±µÄ»Øµ÷º¯Êı
+            //å½“å‰é¡µæ»šåŠ¨å¼€å§‹æ—¶çš„å›è°ƒå‡½æ•°
             this.onScrollStart = options.onScrollStart || undefined;
-            //µ±Ç°Ò³¹ö¶¯¿ªÊ¼Ö®Ç°µÄ»Øµ÷º¯Êı
+            //å½“å‰é¡µæ»šåŠ¨å¼€å§‹ä¹‹å‰çš„å›è°ƒå‡½æ•°
             this.onScrollBeforeStart = options.onScrollBeforeStart || undefined;
-            //ÊÇ·ñ×Ô¶¯ÂÖ²¥ BooleanÖµ
+            //æ˜¯å¦è‡ªåŠ¨è½®æ’­ Booleanå€¼
             this.autoplay = options.autoplay === false ? false : true;
 
-            //Ë®Æ½¹ö¶¯ or ´¹Ö±¹ö¶¯
+            //æ°´å¹³æ»šåŠ¨ or å‚ç›´æ»šåŠ¨
             this.isVertical = options.isVertical === true ? true : false;
 
-            //µ±Ç°Ò³¹ö¶¯¶àÉÙÏñËØÔòÅĞ¶¨»¬µ½ÏÂÒ»Ò³£¬
-            // intÖµ£¬Ä¬ÈÏÎªµ±Ç°Ò³¿í¶ÈµÄÁù·ÖÖ®Ò»¡£
+            //å½“å‰é¡µæ»šåŠ¨å¤šå°‘åƒç´ åˆ™åˆ¤å®šæ»‘åˆ°ä¸‹ä¸€é¡µï¼Œ
+            // intå€¼ï¼Œé»˜è®¤ä¸ºå½“å‰é¡µå®½åº¦çš„å…­åˆ†ä¹‹ä¸€ã€‚
             this.boundary = parseInt(options.boundary) || (this.isVertical ? this.mainEleH : this.mainEleW)/6;
-            this.prevBoundary = this.boundary;   //ÓÃÓÚ»»Ò³Ê±ÅĞ¶ÏÊÇ·ñÑ­»·
+            this.prevBoundary = this.boundary;   //ç”¨äºæ¢é¡µæ—¶åˆ¤æ–­æ˜¯å¦å¾ªç¯
 
-            //Êó±êĞüÍ£ÔÚ²å¼şÇøÓòÔòÍ£Ö¹×Ô¶¯ÂÖ²¥£¬ BooleanÖµ
+            //é¼ æ ‡æ‚¬åœåœ¨æ’ä»¶åŒºåŸŸåˆ™åœæ­¢è‡ªåŠ¨è½®æ’­ï¼Œ Booleanå€¼
             this.hoverStop = options.hoverStop === false ? false : true;
 
-            //ÊÇ·ñÆôÓÃ¾ÓÖĞÄ£Ê½£¬Ä¬ÈÏÎª²»ÆôÓÃ¡£
-            // ÆôÓÃºóµ±Ç°Ò³µÄ×óÓÒÁ½±ß¿ÉÒÔ¿´µ½Ç°Ò»¸öºÍºóÒ»¸ö¹ö¶¯Ò³µÄÒ»±ß¡£
+            //æ˜¯å¦å¯ç”¨å±…ä¸­æ¨¡å¼ï¼Œé»˜è®¤ä¸ºä¸å¯ç”¨ã€‚
+            // å¯ç”¨åå½“å‰é¡µçš„å·¦å³ä¸¤è¾¹å¯ä»¥çœ‹åˆ°å‰ä¸€ä¸ªå’Œåä¸€ä¸ªæ»šåŠ¨é¡µçš„ä¸€è¾¹ã€‚
             this.centerMode = options.centerMode === true ? true : false;
 
-            //¹ö¶¯Ê±Ê¹ÓÃÆôÓÃ¶¯»­£¬Ä¬ÈÏÎªÆôÓÃ
+            //æ»šåŠ¨æ—¶ä½¿ç”¨å¯ç”¨åŠ¨ç”»ï¼Œé»˜è®¤ä¸ºå¯ç”¨
             this.animate = options.animate === false ? false : true;
 
-            //ÊÇ·ñÆôÓÃ¹ö¶¯Ò³Ö¸Ê¾Æ÷£¬Ä¬ÈÏÎªtrue
+            //æ˜¯å¦å¯ç”¨æ»šåŠ¨é¡µæŒ‡ç¤ºå™¨ï¼Œé»˜è®¤ä¸ºtrue
             this.pointer = options.pointer === false ? false : true;
 
-            //Ä¬ÈÏµÄ¹ö¶¯Ò³Ö¸Ê¾Æ÷Ğ¡Ô²µãµÄÑùÊ½£¬ ´«ÈëCSSÑùÊ½ÀàÃû×Ö·û´®¡£
+            //é»˜è®¤çš„æ»šåŠ¨é¡µæŒ‡ç¤ºå™¨å°åœ†ç‚¹çš„æ ·å¼ï¼Œ ä¼ å…¥CSSæ ·å¼ç±»åå­—ç¬¦ä¸²ã€‚
             this.pointerClass = options.pointerClass || "s_turnsPointerClass";
 
-            //µ±Ç°µÄ¹ö¶¯Ò³µÄÑùÊ½£¬ ´«ÈëCSSÑùÊ½ÀàÃû×Ö·û´®¡£
+            //å½“å‰çš„æ»šåŠ¨é¡µçš„æ ·å¼ï¼Œ ä¼ å…¥CSSæ ·å¼ç±»åå­—ç¬¦ä¸²ã€‚
             this.activeClass = options.activeClass || "sturns_active";
 
-            //µ±Ç°µÄ¹ö¶¯Ò³Ö¸Ê¾Æ÷Ğ¡Ô²µãµÄÑùÊ½£¬ ´«ÈëCSSÑùÊ½ÀàÃû×Ö·û´®¡£
+            //å½“å‰çš„æ»šåŠ¨é¡µæŒ‡ç¤ºå™¨å°åœ†ç‚¹çš„æ ·å¼ï¼Œ ä¼ å…¥CSSæ ·å¼ç±»åå­—ç¬¦ä¸²ã€‚
             this.pointerActiveClass = options.pointerActiveClass || "s_indi_active";
 
-            //¹ö¶¯Ò³Ö¸Ê¾Æ÷µÄÕûÌåÎ»ÖÃ£¬´«ÈëCSSÑùÊ½ÀàÃû×Ö·û´®
+            //æ»šåŠ¨é¡µæŒ‡ç¤ºå™¨çš„æ•´ä½“ä½ç½®ï¼Œä¼ å…¥CSSæ ·å¼ç±»åå­—ç¬¦ä¸²
             this.pointerPosition = options.pointerPosition || "s_indicator";
 
-            //ÊÇ·ñÆôÓÃÑ­»·Ä£Ê½£¬Ä¬ÈÏÎªÆôÓÃ
+            //æ˜¯å¦å¯ç”¨å¾ªç¯æ¨¡å¼ï¼Œé»˜è®¤ä¸ºå¯ç”¨
             this.circle = options.circle === false ? false : true;
 
-            //ÆôÓÃ¾ÓÖĞÄ£Ê½ºó£¬µ±Ç°Ò³Óë·Ç¾ÓÖĞÄ£Ê½Ò³ÃæµÄ¿í¶È±È
-            //·¶Î§Îª0~1Ö®¼äµÄĞ¡Êı£¬Ä¬ÈÏÎª 0.85
+            //å¯ç”¨å±…ä¸­æ¨¡å¼åï¼Œå½“å‰é¡µä¸éå±…ä¸­æ¨¡å¼é¡µé¢çš„å®½åº¦æ¯”
+            //èŒƒå›´ä¸º0~1ä¹‹é—´çš„å°æ•°ï¼Œé»˜è®¤ä¸º 0.85
             centerModeScale = options.centerModeScale || 0.85;
             this.centerModeScale = centerModeScale > 1 ? 1 : centerModeScale;
 
-            //¶¯»­»º¶¯ÇúÏß
+            //åŠ¨ç”»ç¼“åŠ¨æ›²çº¿
             this.timingFn = options.timingFn || "ease";
 
-            //¶¯»­³ÖĞøÊ±³¤
+            //åŠ¨ç”»æŒç»­æ—¶é•¿
             this.during = (options.during || 500);
             this.duringSec = this.during/1000;
 
-            //×Ô¶¯ÂÖ²¥µÄÊ±¼ä¼ä¸ô£¬ÒÔºÁÃëÎªµ¥Î»
+            //è‡ªåŠ¨è½®æ’­çš„æ—¶é—´é—´éš”ï¼Œä»¥æ¯«ç§’ä¸ºå•ä½
             this.autoplaySpeed = (options.autoplaySpeed || 3000) + this.during;
 
-            //»¬¶¯Ê±ÊÇ·ñ×èÖ¹Ä¬ÈÏÊÂ¼ş
+            //æ»‘åŠ¨æ—¶æ˜¯å¦é˜»æ­¢é»˜è®¤äº‹ä»¶
             this.preventDefault = options.preventDefault === false ? false : true;
 
-            //»¬¶¯Ê±ÊÇ·ñ×èÖ¹Ä¬ÈÏÊÂ¼ş
+            //æ»‘åŠ¨æ—¶æ˜¯å¦é˜»æ­¢é»˜è®¤äº‹ä»¶
             this.noTouch = options.noTouch === true ? true : false;
 
         }
 
-        //²å¼ş³õÊ¼»¯
+        //æ’ä»¶åˆå§‹åŒ–
         this._init();
     }
 
     Sturns.prototype = {
-        //ĞŞÕı¹¹Ôìº¯ÊıÖ¸Õë
+        //ä¿®æ­£æ„é€ å‡½æ•°æŒ‡é’ˆ
         constructor: Sturns,
 
-        //²å¼ş³õÊ¼»¯
+        //æ’ä»¶åˆå§‹åŒ–
         _init:function(){
           var that = this,
               scrollEleCls = that.isVertical ? "s_turnsListsV" : "s_turnsLists";
@@ -166,7 +166,7 @@ void function (window,s,undefined){
 
           that.moveRange = 0;
 
-          //¾ÓÖĞÄ£Ê½Ê±£¬µ±Ç°Ò³´óĞ¡
+          //å±…ä¸­æ¨¡å¼æ—¶ï¼Œå½“å‰é¡µå¤§å°
           if(that.centerMode){
               if(that.isVertical){
                   that.pageHeight = that.mainEleH * that.centerModeScale;
@@ -182,10 +182,10 @@ void function (window,s,undefined){
               that.centerModeScale = 1;
           }
 
-          //¹ö¶¯Ò³´óĞ¡
+          //æ»šåŠ¨é¡µå¤§å°
           that.pageSize = that.isVertical ? that.pageHeight : that.pageWidth;
 
-          //¹«ÓÃĞŞÕı
+          //å…¬ç”¨ä¿®æ­£
           that._fix();
 
           var vendor = {
@@ -196,10 +196,10 @@ void function (window,s,undefined){
           }
 
           /***
-           * transition  IE 8 9 ²»Ö§³Ö
-           * transform  IE 8²»Ö§³Ö IE9Ğ´Ç°×º
-           * gradient IE89 ²»Ö§³Ö
-           * classList IE89²»Ö§³Ö
+           * transition  IE 8 9 ä¸æ”¯æŒ
+           * transform  IE 8ä¸æ”¯æŒ IE9å†™å‰ç¼€
+           * gradient IE89 ä¸æ”¯æŒ
+           * classList IE89ä¸æ”¯æŒ
            * **/
 
           function prefixStyle(str){
@@ -212,27 +212,27 @@ void function (window,s,undefined){
               };
           }
 
-          //ÌØÕ÷¼ì²â
+          //ç‰¹å¾æ£€æµ‹
           that.supports = (function(){
               var u = navigator.userAgent;
               var obj = {
-                  //ÄÚºË
+                  //å†…æ ¸
                   isTrident: u.indexOf('MSIE') > 0 ? "ms" : false,
                   isPresto: u.indexOf('Presto') > 0 ? "O" : false,
                   isWebKit: u.indexOf('AppleWebKit') > 0 ? "Webkit" : false,
                   isGecko :  u.indexOf('Gecko') > 0 && u.indexOf('Firefox') > 0 ? "Moz" : false,
 
-                  //ÏµÍ³»òÆ½Ì¨
+                  //ç³»ç»Ÿæˆ–å¹³å°
                   isAndroid:/android/ig.test(u),
                   isIPhone: /iphone/ig.test(u),
                   isIPad:/ipad/ig.test(u),
               }
 
-              //Éè±¸
+              //è®¾å¤‡
               obj.isMobile = u.indexOf('Mobi')>0 || obj.isIPhone || obj.isAndroid || obj.isIPad  ||u.indexOf('480')>0;
               obj.isTablet = u.indexOf('Tablet')>0 || obj.isIPad || u.indexOf('Nexus 7')>0;
 
-              //ÊÂ¼ş¼ì²â
+              //äº‹ä»¶æ£€æµ‹
               obj.isTouchPad = (/hp-tablet/gi).test(u);
               obj.hasTouch = 'ontouchstart' in window && !obj.isTouchPad;
 
@@ -246,7 +246,7 @@ void function (window,s,undefined){
               return obj;
           })();
 
-          //¶èĞÔ¼ÓÔØ
+          //æƒ°æ€§åŠ è½½
           that.setTransFn = (function(){
               if(that.isVertical){
                   return function(num){
@@ -263,21 +263,21 @@ void function (window,s,undefined){
 
           //that.currentPage = -that.pageWidth*(that.centerMode ? 2 : 1);
           that.currentPage = -that._fix.fixTOPage;
-          //Ê¹³õÊ¼»¯µÄµÚÒ»Ò³Îª·Ç¿ËÂ¡Ò³
+          //ä½¿åˆå§‹åŒ–çš„ç¬¬ä¸€é¡µä¸ºéå…‹éš†é¡µ
           that.setTransFn(-that._fix.fixTOPage+that.clipSize);
           that.currentIndex = Math.abs((that.currentPage+that._fix.fixOZPage)/that.pageSize);
 
 
-          //Æô¶¯»¬¶¯¼àÌı
+          //å¯åŠ¨æ»‘åŠ¨ç›‘å¬
           that._move();
 
-          //±ê¼Ç
+          //æ ‡è®°
           that._each(that.scrollEle.children,function(idx){
               this.setAttribute("data-sturns-index",idx+1);
               this.setAttribute("index",idx+1);
           });
 
-          //¿ËÂ¡Ç°ºóÁ½¸öÔªËØ²¢Ìí¼Óµ½ÈİÆ÷ÖĞ
+          //å…‹éš†å‰åä¸¤ä¸ªå…ƒç´ å¹¶æ·»åŠ åˆ°å®¹å™¨ä¸­
           var tempLastele = that.scrollEle.lastElementChild.cloneNode(true),
               tempFirstele = that.scrollEle.firstElementChild.cloneNode(true);
           that.scrollEle.insertBefore(tempLastele,that.scrollEle.firstElementChild);
@@ -285,14 +285,14 @@ void function (window,s,undefined){
 
           that.centerMode && fixCenterMode.call(that,that);
 
-          //ÉèÖÃÃ¿¸ö¹ö¶¯Ò²µÄ¿í¶ÈÎªÒ³Ãæ¿í¶È
+          //è®¾ç½®æ¯ä¸ªæ»šåŠ¨ä¹Ÿçš„å®½åº¦ä¸ºé¡µé¢å®½åº¦
           that._each(that.pages,function(idx){
               that.isVertical ?
                   this.style.height = that.pageHeight+"px" :
                   this.style.width = that.pageWidth+"px";
           });
 
-          //ÉèÖÃ¹ö¶¯Ò³¸¸ÈİÆ÷µÄ¿í¶È
+          //è®¾ç½®æ»šåŠ¨é¡µçˆ¶å®¹å™¨çš„å®½åº¦
           //that.scrollEle.style.width = (that.centerMode? that.length+4 : that.length+2) * that.pageWidth+"px";
           that.isVertical ?
               that.scrollEle.style.height = (that.centerMode? that.length+4 : that.length+2) * that.pageHeight+"px" :
@@ -302,32 +302,32 @@ void function (window,s,undefined){
           that._addClass(that.scrollEle.firstElementChild,"s_turnsClone");
 
 
-          //¿ªÊ¼ÂÖ²¥
+          //å¼€å§‹è½®æ’­
           that.start();
 
           that._addClass(that.scrollEle.children[that.centerMode ? 2 : 1],that.activeClass);
 
-          //Èç¹ûÆôÓÃÖ¸Ê¾Æ÷Ôò³õÊ¼»¯Ö¸Ê¾Æ÷
+          //å¦‚æœå¯ç”¨æŒ‡ç¤ºå™¨åˆ™åˆå§‹åŒ–æŒ‡ç¤ºå™¨
           that.pointer && that.indicator();
 
-          //Èç¹ûÖ¸¶¨ÁËÖ¸Ê¾Æ÷ÀàÃûÔò¿ªÊ¼³õÊ¼»¯Ö¸Ê¾Æ÷Î»ÖÃ
+          //å¦‚æœæŒ‡å®šäº†æŒ‡ç¤ºå™¨ç±»ååˆ™å¼€å§‹åˆå§‹åŒ–æŒ‡ç¤ºå™¨ä½ç½®
           that.s_indicator && that.pointerPosition && that._addClass(that.s_indicator.parentNode,that.pointerPosition);
 
           that.run = run;
 
 
-          //¶¯»­ÓÃ
+          //åŠ¨ç”»ç”¨
           this.aniTimer = null;
           //that.sUtils = sUtils;
         },
-        //»¬¶¯ÊÂ¼ş´¦Àí
+        //æ»‘åŠ¨äº‹ä»¶å¤„ç†
         _move:function(){
           var that = this,isDown = false,
-              downX = 0, downY= 0,  //°´ÏÂÊó±ê»òÕß¿ªÊ¼´¥ÃşÊ±µÄ×ø±ê
-              moveX = 0,moveY = 0,    //°´ÏÂÊó±ê»òÕß¿ªÊ¼´¥ÃşºóÒÆ¶¯µÄ×ø±ê
-              changeX = 0,changeY = 0;    //ÉÏÁ½×éÊı¾İÖ®¼ä±ä»¯µÄ²îÖµ
+              downX = 0, downY= 0,  //æŒ‰ä¸‹é¼ æ ‡æˆ–è€…å¼€å§‹è§¦æ‘¸æ—¶çš„åæ ‡
+              moveX = 0,moveY = 0,    //æŒ‰ä¸‹é¼ æ ‡æˆ–è€…å¼€å§‹è§¦æ‘¸åç§»åŠ¨çš„åæ ‡
+              changeX = 0,changeY = 0;    //ä¸Šä¸¤ç»„æ•°æ®ä¹‹é—´å˜åŒ–çš„å·®å€¼
 
-          //¿ªÊ¼ÍÏ×§ÊÂ¼ş¼àÌı
+          //å¼€å§‹æ‹–æ‹½äº‹ä»¶ç›‘å¬
           that.mainEle.addEventListener(that.supports.evtStart,function(e){
               isDown = true;
               downX = that.supports.hasTouch ? e.touches[0].clientX : e.clientX;
@@ -335,9 +335,9 @@ void function (window,s,undefined){
               that.stop();
           });
 
-          //ÍÏ×§Ê±ÊÂ¼ş¼àÌıÆ÷
+          //æ‹–æ‹½æ—¶äº‹ä»¶ç›‘å¬å™¨
           that.mainEle.addEventListener(that.supports.evtMove,function(e){
-              //ÅĞ¶ÏÊÇ·ñÍÏ×§×´Ì¬
+              //åˆ¤æ–­æ˜¯å¦æ‹–æ‹½çŠ¶æ€
               if(isDown && !that.noTouch){
                   moveX = that.supports.hasTouch ? e.touches[0].clientX : e.clientX;
                   moveY = that.supports.hasTouch ? e.touches[0].clientY : e.clientY;
@@ -355,28 +355,28 @@ void function (window,s,undefined){
                   that.setTransFn(that.currentPage+(that.isVertical ? changeY : changeX)+that.clipSize);
                   that.onScroll && that.onScroll.call(that,that.currentIndex,{moveX:moveX,moveY:moveY});
               }
-              //×èÖ¹Ä¬ÈÏÊÂ¼ş
+              //é˜»æ­¢é»˜è®¤äº‹ä»¶
               that.preventDefault && e.preventDefault();
           });
 
-          //ÍÏ×§ÊÂ¼ş½áÊø¼àÌı
+          //æ‹–æ‹½äº‹ä»¶ç»“æŸç›‘å¬
             that.mainEle.addEventListener(that.supports.evtEnd,function(e){
               isDown = false;
 
-              //Èç¹û²»ÊÇÎŞ·ìÂÖ²¥µÄÇé¿öÏÂ£º ÂÖ²¥µ½µÚÒ»Ò³ÔòÔÙ²»ÄÜ×ó»®£¬×îºóÒ»Ò³Ôò²»ÄÜÓÒ»®
+              //å¦‚æœä¸æ˜¯æ— ç¼è½®æ’­çš„æƒ…å†µä¸‹ï¼š è½®æ’­åˆ°ç¬¬ä¸€é¡µåˆ™å†ä¸èƒ½å·¦åˆ’ï¼Œæœ€åä¸€é¡µåˆ™ä¸èƒ½å³åˆ’
               if(!that.circle){
                   if((that.currentIndex === 1 && that.isBoundary && (that.isVertical ? changeY : changeX) > 0) ||
                       (that.currentIndex === that.length && that.isBoundary && (that.isVertical ? changeY : changeX) < 0)){
                       that.boundary = that.mainEleW*this.length;
                   }
               }
-              //»¬¶¯Ê±ÅĞ¶¨±ß½ç
+              //æ»‘åŠ¨æ—¶åˆ¤å®šè¾¹ç•Œ
               var changedPX = that.isVertical ? changeY : changeX;
               if(Math.abs((that.isVertical ? changeY : changeX)) > that.boundary){
                   changedPX > 0 ? that.prev() : that.next();
               }else{
 
-                  //»¬¶¯ÎŞ²îÖµ»òÕßµã»÷Ôò²»´¥·¢¶¯»­
+                  //æ»‘åŠ¨æ— å·®å€¼æˆ–è€…ç‚¹å‡»åˆ™ä¸è§¦å‘åŠ¨ç”»
                   if(changedPX !== 0){
                       that.animate && that._ani();
                       that.setTransFn(that.currentPage+that.clipSize);
@@ -387,15 +387,15 @@ void function (window,s,undefined){
 
               that.start();
 
-              //²îÖµÇåÁã£¬ÒÔ·Àµã»÷´¥·¢ÂÖ²¥
+              //å·®å€¼æ¸…é›¶ï¼Œä»¥é˜²ç‚¹å‡»è§¦å‘è½®æ’­
               changeY = 0;
               changeX = 0;
 
-              //×èÖ¹ÊÂ¼şÃ°Åİ
+              //é˜»æ­¢äº‹ä»¶å†’æ³¡
               e.stopPropagation();
           });
 
-          //ÓÃÓÚhoverStopÊÂ¼ş£¬Ö»Õë¶ÔPC
+          //ç”¨äºhoverStopäº‹ä»¶ï¼Œåªé’ˆå¯¹PC
           that.mainEle.addEventListener("mouseover",function(){
               if(that.hoverStop){
                   that.stop();
@@ -406,7 +406,7 @@ void function (window,s,undefined){
           });
         },
 
-        //¼æÈİÄ£¿é  TODO
+        //å…¼å®¹æ¨¡å—  TODO
         _fix : function(){
             this._fix = {
                 fixTOPage : (this.centerMode?2:1) * this.pageSize,
@@ -414,7 +414,7 @@ void function (window,s,undefined){
                 fixOZPage : (this.centerMode?1:0) * this.pageSize
             }
         },
-        //²¹¼äÄ£¿é
+        //è¡¥é—´æ¨¡å—
         _ani : function(){
             var _ = this;
 
@@ -425,17 +425,17 @@ void function (window,s,undefined){
                 //_.scrollEle.style.WebkitTransition = "";
             },_.during)
         },
-        //scrollBy ¹ö¶¯¶àÉÙ¾àÀë
+        //scrollBy æ»šåŠ¨å¤šå°‘è·ç¦»
         scrollBy : function(pxNum){
             this.animate && this._ani();
             this.setTransFn(this.currentPage+pxNum);
         },
-        //scrollTo ¹ö¶¯µ½ÄÄÀï
+        //scrollTo æ»šåŠ¨åˆ°å“ªé‡Œ
         scrollTo : function(pxNum){
             this.animate && this._ani();
             this.setTransFn(pxNum);
         },
-        //scrollTo ¹ö¶¯µ½Ö¸¶¨Ò³
+        //scrollTo æ»šåŠ¨åˆ°æŒ‡å®šé¡µ
         scrollToPage : function(pageNum){
             this.animate && this._ani();
             //var realPageNum = this.length-(this.centerMode?4 : 2);
@@ -445,7 +445,7 @@ void function (window,s,undefined){
 
             this.currentPage = -this.pageSize*(pageNum+this._fix.fixOZ);
         },
-        //¿ªÊ¼¶¯»­
+        //å¼€å§‹åŠ¨ç”»
         start : function(){
             var _ = this;
             if(_.hoverStop && _.autoplay){
@@ -454,7 +454,7 @@ void function (window,s,undefined){
             }
         },
 
-        //¹ö¶¯Ö¸Ê¾Æ÷³õÊ¼»¯
+        //æ»šåŠ¨æŒ‡ç¤ºå™¨åˆå§‹åŒ–
         indicator : function(){
             var _ = this,insertHtml = "";
 
@@ -473,10 +473,10 @@ void function (window,s,undefined){
                 _._addClass(this,_.pointerClass);
             });
 
-            //ÉèÖÃÖ¸Ê¾Æ÷¿í¶È ¾ÓÖĞ
+            //è®¾ç½®æŒ‡ç¤ºå™¨å®½åº¦ å±…ä¸­
             _.s_indicator.style.width = (_.s_indicator.children[0].getBoundingClientRect().width + 5) * _.length+"px";
 
-            //³õÊ¼»¯µÚÒ»¸öÖ¸Ê¾µãÑ¡ÖĞ
+            //åˆå§‹åŒ–ç¬¬ä¸€ä¸ªæŒ‡ç¤ºç‚¹é€‰ä¸­
             _._addClass(_.s_indicator.children[0],_.pointerActiveClass);
 
         },
@@ -492,7 +492,7 @@ void function (window,s,undefined){
             this.timer = null;
         },
 
-        //ÉÏÒ»Ò³
+        //ä¸Šä¸€é¡µ
         prev : function(){
             if(/*this.isBoundary &&*/!this.circle && this.currentIndex === 1){
                 return;
@@ -502,7 +502,7 @@ void function (window,s,undefined){
             }
         },
 
-        //ÏÂÒ»Ò³
+        //ä¸‹ä¸€é¡µ
         next : function(){
             if(/*this.isBoundary &&*/ !this.circle && this.currentIndex === this.length){
                 return;
@@ -512,7 +512,7 @@ void function (window,s,undefined){
             }
         },
 
-        //class¹¤¾ß·½·¨ ÎªÁË¼æÈİIE89,°²×¿2.3
+        //classå·¥å…·æ–¹æ³• ä¸ºäº†å…¼å®¹IE89,å®‰å“2.3
         _addClass:(function(){
             var div = document.createElement("div");
             if(div.classList){
@@ -554,8 +554,9 @@ void function (window,s,undefined){
             if(div.classList){
                 return function(el,cls){
                     if(el) {
-                        el.classList.contains(cls);
+                       return el.classList.contains(cls);
                     }
+                    return false;
                 }
             }else{
                 return function(el,cls){
@@ -571,20 +572,20 @@ void function (window,s,undefined){
         })()
     };
 
-    //Ğ£ÕıÖĞĞÄÄ£Ê½ÏÂ¶¯»­Ğ§¹û
+    //æ ¡æ­£ä¸­å¿ƒæ¨¡å¼ä¸‹åŠ¨ç”»æ•ˆæœ
     var fixCenterMode = function(o){
-        //Èç¹ûÊÇ¾ÓÖĞÄ£Ê½£¬ÔòÇ°¶ËºÍºó¶Ë·Ö±ğ¿ËÂ¡Á½¸ö½Úµã
+        //å¦‚æœæ˜¯å±…ä¸­æ¨¡å¼ï¼Œåˆ™å‰ç«¯å’Œåç«¯åˆ†åˆ«å…‹éš†ä¸¤ä¸ªèŠ‚ç‚¹
         o.scrollEle.appendChild(o.scrollEle.children[2].cloneNode(true));
         o.scrollEle.insertBefore(o.scrollEle.lastElementChild.previousElementSibling
                 .previousElementSibling.previousElementSibling.cloneNode(true),
             o.scrollEle.firstElementChild);
 
-        //±êÊ¶Îª¿ËÂ¡½Úµã¶ÔÏó
+        //æ ‡è¯†ä¸ºå…‹éš†èŠ‚ç‚¹å¯¹è±¡
         o._addClass(o.scrollEle.lastElementChild.previousElementSibling,"s_turnsClone");
         o._addClass(o.scrollEle.firstElementChild.nextElementSibling,"s_turnsClone");
     }
 
-    //Ö¸Ê¾Æ÷ÔË×÷·½·¨
+    //æŒ‡ç¤ºå™¨è¿ä½œæ–¹æ³•
     var indicatorMove = function(obj){
         var children = obj.s_indicator.children;
         obj._each(children,function(){
@@ -594,16 +595,16 @@ void function (window,s,undefined){
     }
 
 
-    // ÔË¶¯º¯Êı
+    // è¿åŠ¨å‡½æ•°
     var run = function(obj){
-        //·½Ïò´¦Àí
+        //æ–¹å‘å¤„ç†
         obj.moveRange = obj.direction === "rtl" ? obj.pageSize : -obj.pageSize;
 
         var beforeNum = (obj.currentIndex+(obj.centerMode?0:1))%obj.length+1;
-        //¹ö¶¯Ç°»Øµ÷
+        //æ»šåŠ¨å‰å›è°ƒ
         //obj.onScrollBeforeStart && obj.onScrollBeforeStart.call(obj,beforeNum);
 
-        //¹ö¶¯Ê±»Øµ÷
+        //æ»šåŠ¨æ—¶å›è°ƒ
         obj.onScrollStart && obj.onScrollStart.call(obj,beforeNum);
 
         obj.animate && obj._ani();
@@ -611,18 +612,18 @@ void function (window,s,undefined){
         obj.setTransFn((obj.currentPage += (obj.moveRange))+obj.clipSize);
         obj.prevPageIdx = obj.currentIndex;
 
-        //¹ö¶¯ºóÒ³Êı£¬ÎŞÏŞ¹ö¶¯´¦Àí
+        //æ»šåŠ¨åé¡µæ•°ï¼Œæ— é™æ»šåŠ¨å¤„ç†
         setTimeout(function(){
             var objLth = obj.length+2;
 
             //TODO
-            //´Ó×óÏòÓÒ¹ö¶¯Ê±£¬Èç¹û¹ö¶¯µ½¿ËÂ¡Ò³£¬ÔòÌø×ªµ½¶ÔÓ¦µÄ·Ç¿ËÂ¡Ò³
+            //ä»å·¦å‘å³æ»šåŠ¨æ—¶ï¼Œå¦‚æœæ»šåŠ¨åˆ°å…‹éš†é¡µï¼Œåˆ™è·³è½¬åˆ°å¯¹åº”çš„éå…‹éš†é¡µ
             if(obj.circle){
                 if(obj.currentPage == ((obj.centerMode?0:1)-objLth)*obj.pageSize) {
                     obj.setTransFn(obj.clipSize - obj._fix.fixTOPage);
                     obj.currentPage = -obj._fix.fixTOPage;
                 }
-                //´ÓÓÒÏò×ó¹ö¶¯Ê±£¬Èç¹û¹ö¶¯µ½¿ËÂ¡Ò³£¬ÔòÌø×ªµ½¶ÔÓ¦µÄ·Ç¿ËÂ¡Ò³
+                //ä»å³å‘å·¦æ»šåŠ¨æ—¶ï¼Œå¦‚æœæ»šåŠ¨åˆ°å…‹éš†é¡µï¼Œåˆ™è·³è½¬åˆ°å¯¹åº”çš„éå…‹éš†é¡µ
                 if(obj.currentPage == -obj._fix.fixOZPage){
                     obj.setTransFn(obj.clipSize-(objLth-(obj.centerMode?1:2))*obj.pageSize);
                     obj.currentPage = -(objLth-(obj.centerMode?1:2))*obj.pageSize;
@@ -636,7 +637,7 @@ void function (window,s,undefined){
                     obj.direction = "rtl";
                 }
 
-                //´ÓÓÒÏò×ó¹ö¶¯Ê±£¬Èç¹û¹ö¶¯µ½¿ËÂ¡Ò³£¬ÔòÌø×ªµ½¶ÔÓ¦µÄ·Ç¿ËÂ¡Ò³
+                //ä»å³å‘å·¦æ»šåŠ¨æ—¶ï¼Œå¦‚æœæ»šåŠ¨åˆ°å…‹éš†é¡µï¼Œåˆ™è·³è½¬åˆ°å¯¹åº”çš„éå…‹éš†é¡µ
                 if(rtlFlag &&  obj.direction === "rtl"){
                     obj.direction = "ltr";
                 }
@@ -644,30 +645,30 @@ void function (window,s,undefined){
                 if(ltrFlag || rtlFlag){
                     obj.isBoundary = true;
                 }else{
-                    //±ß½ç±êÖ¾Î»¸´Ô­Îªfalse¡£
+                    //è¾¹ç•Œæ ‡å¿—ä½å¤åŸä¸ºfalseã€‚
                     obj.isBoundary = false;;
                 }
             }
 
-            //¹ö¶¯Íê³ÉÖ®Ç°»Øµ÷
+            //æ»šåŠ¨å®Œæˆä¹‹å‰å›è°ƒ
             obj.onScrollBeforeEnd && obj.onScrollBeforeEnd.call(obj,obj.currentIndex);
 
-            //¼ÆËãµ±Ç°Ò³
+            //è®¡ç®—å½“å‰é¡µ
             obj.currentIndex = Math.abs((obj.currentPage+obj._fix.fixOZPage)/obj.pageSize);
 
-            //¹ö¶¯Íê³ÉÊ±»Øµ÷
+            //æ»šåŠ¨å®Œæˆæ—¶å›è°ƒ
             obj.onScrollEnd && obj.onScrollEnd.call(obj,obj.currentIndex);
 
-            //Ö¸Ê¾Æ÷±ä¶¯
+            //æŒ‡ç¤ºå™¨å˜åŠ¨
             obj.pointer && indicatorMove.call(obj,obj);
 
-            //¸øµ±Ç°Ò³ÉèÖÃ activeÀà
+            //ç»™å½“å‰é¡µè®¾ç½® activeç±»
             obj._each(obj.pages,function(i,ele){
                 obj._removeClass(ele,obj.activeClass);
             });
 
             obj._each(obj.pages,function(i,ele){
-                //dataset IE8 9 10 ²¿·ÖÖ§³Ö  ±¨´í
+                //dataset IE8 9 10 éƒ¨åˆ†æ”¯æŒ  æŠ¥é”™
                 if(ele.dataset){
                     if(+ele.dataset.sturnsIndex === obj.currentIndex &&
                         !obj._hasClass(ele,"s_turnsClone")){
