@@ -4,6 +4,6 @@ sTurns carousel for mobile or modern browser.
 适用于移动端或现代浏览器。
 API丰富，简单易用。
 具体参照：
-https://schoeu.com/sturns.html
+http://schoeu.com/exa/sturns.html
 
 ====
