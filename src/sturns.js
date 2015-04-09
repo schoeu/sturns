@@ -27,12 +27,14 @@ void function (window,s,undefined){
 }(window,function(window,undefined){
     'use strict';
 
+    var isModelClass = typeof window.document.body.classList !== "undefined";
+
     var Sturns = function(selector,options){
         var centerModeScale;
 
         options = options || {};
 
-        this.mainEle = document.querySelector(selector);
+        this.mainEle = document.querySelector(selector) || window.document.body;
 
         //如果主元素传参有误，则直接返回。
         if(!this.mainEle){
@@ -343,7 +345,6 @@ void function (window,s,undefined){
                   moveY = that.supports.hasTouch ? e.touches[0].clientY : e.clientY;
                   changeX = moveX - downX;
                   changeY = moveY - downY;
-                  console.log(changeX);
                   //TODO
                  /* clearTimeout(that.aniTimer);
                   that.aniTimer = null;
@@ -514,8 +515,7 @@ void function (window,s,undefined){
 
         //class工具方法 为了兼容IE89,安卓2.3
         _addClass:(function(){
-            var div = document.createElement("div");
-            if(div.classList){
+            if(isModelClass){
                 return function(el,cls){
                     if(el){
                         el.classList.add(cls);
@@ -532,8 +532,7 @@ void function (window,s,undefined){
             }
         })(),
         _removeClass:(function(){
-            var div = document.createElement("div");
-            if(div.classList){
+            if(isModelClass){
                 return function(el,cls){
                     if(el) {
                         el.classList.remove(cls);
@@ -550,8 +549,7 @@ void function (window,s,undefined){
             }
         })(),
         _hasClass:(function(){
-            var div = document.createElement("div");
-            if(div.classList){
+            if(isModelClass){
                 return function(el,cls){
                     if(el) {
                        return el.classList.contains(cls);

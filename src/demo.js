@@ -7,7 +7,7 @@ var singleDemo = new Sturns(".singleDemo");
 var singleDemoCenter = new Sturns(".singleDemoCenter",{
     autoplay: false,
     centerMode : true,
-    circle:false,
+    circle:false
 });
 
 var singleDemoV = new Sturns(".singleDemoV",{
@@ -16,14 +16,14 @@ var singleDemoV = new Sturns(".singleDemoV",{
     isVertical:true,
     pointer:false,
     onScroll:function(idx,obj){
-        //console.log("µÚ"+idx+"Ò³£¬ moveX: "+obj.moveX+" moveY: "+obj.moveY);
+        //console.log("ï¿½ï¿½"+idx+"Ò³ï¿½ï¿½ moveX: "+obj.moveX+" moveY: "+obj.moveY);
     }
 });
 
 var singleDemoVCenter = new Sturns(".singleDemoVCenter",{
     autoplay: false,
     centerMode : true,
-    isVertical:true,
+    isVertical:true
 });
 
 var picDemo = new Sturns(".picDemo",{
