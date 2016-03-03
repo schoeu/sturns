@@ -1,13 +1,8 @@
-/*
-     Version: 1.0.1
-     Author: Schoeu
-     update: 2015/3/3
-     suports:IE10+ Firefox Chrome Opera Safari Android IOS
-     Website: http://schoeu.com
-     Docs: http://schoeu.github.io/sturns
-     Repo: http://github.com/schoeu/sturns
-     Issues: http://github.com/schoeu/sturns/issues
- */
+/**
+ * @file sturns.js
+ * @author schoeu
+ * @email quanyou1013@gmail.com
+ * **/
 
 void function (window,s,undefined){
     'use strict';
@@ -65,13 +60,16 @@ void function (window,s,undefined){
         //是否已经滚动到边界
         this.isBoundary = true;
 
-        //滚动也的个数，不包含克隆的元素节点
+        //滚动页的个数，不包含克隆的元素节点
         this.length = this.scrollEle.children.length;
         this.prevPageIdx = 1;
         if(typeof options === "object"){
-            //水平滚动的方向
-            // ltr：左到右   rtl：右到左  默认为从左到右
+            /**
+             * 水平滚动的方向
+             * ltr：左到右   rtl：右到左  默认为从左到右
+             * **/
             this.direction = options.direction || "ltr";
+
             //滚动时的回调函数
             this.onScroll = options.onScroll || undefined;
 
@@ -90,10 +88,14 @@ void function (window,s,undefined){
             //水平滚动 or 垂直滚动
             this.isVertical = options.isVertical === true ? true : false;
 
-            //当前页滚动多少像素则判定滑到下一页，
-            // int值，默认为当前页宽度的六分之一。
+            /**
+             * 当前页滚动多少像素则判定滑到下一页
+             * int值，默认为当前页宽度的六分之一
+             * **/
             this.boundary = parseInt(options.boundary) || (this.isVertical ? this.mainEleH : this.mainEleW)/6;
-            this.prevBoundary = this.boundary;   //用于换页时判断是否循环
+
+            //用于换页时判断是否循环
+            this.prevBoundary = this.boundary;
 
             //鼠标悬停在插件区域则停止自动轮播， Boolean值
             this.hoverStop = options.hoverStop === false ? false : true;
@@ -172,10 +174,10 @@ void function (window,s,undefined){
           if(that.centerMode){
               if(that.isVertical){
                   that.pageHeight = that.mainEleH * that.centerModeScale;
-                  that.clipHeight = +((that.mainEleH * (1-that.centerModeScale)/2).toFixed(1));
+                  that.clipHeight = +((that.mainEleH * (1 - that.centerModeScale) / 2).toFixed(1));
               }else{
                   that.pageWidth = that.mainEleW * that.centerModeScale;
-                  that.clipWidth = +((that.mainEleW * (1-that.centerModeScale)/2).toFixed(1));
+                  that.clipWidth = +((that.mainEleW * (1 - that.centerModeScale) / 2).toFixed(1));
               }
 
               that.clipSize = that.isVertical ? that.clipHeight : that.clipWidth;
@@ -195,9 +197,10 @@ void function (window,s,undefined){
               'Moz': 'MozTransform',
               'O': 'OTransform',
               'ms': 'mstransform'
-          }
+          };
 
           /***
+           * 浏览器兼容备注:
            * transition  IE 8 9 不支持
            * transform  IE 8不支持 IE9写前缀
            * gradient IE89 不支持
@@ -228,7 +231,7 @@ void function (window,s,undefined){
                   isAndroid:/android/ig.test(u),
                   isIPhone: /iphone/ig.test(u),
                   isIPad:/ipad/ig.test(u),
-              }
+              };
 
               //设备
               obj.isMobile = u.indexOf('Mobi')>0 || obj.isIPhone || obj.isAndroid || obj.isIPad  ||u.indexOf('480')>0;
@@ -239,7 +242,7 @@ void function (window,s,undefined){
               obj.hasTouch = 'ontouchstart' in window && !obj.isTouchPad;
 
               obj.vendor = obj.isWebKit || obj.isGecko || obj.isTrident || obj.isPresto || " ";
-              obj.transition =  prefixStyle("transition")[obj.vendor]
+              obj.transition =  prefixStyle("transition")[obj.vendor];
               obj.evtStart = obj.hasTouch ? "touchstart" : "mousedown";
               obj.evtMove = obj.hasTouch ? "touchmove" : "mousemove";
               obj.evtEnd = obj.hasTouch ? "touchend" : "mouseup";
@@ -252,23 +255,19 @@ void function (window,s,undefined){
           that.setTransFn = (function(){
               if(that.isVertical){
                   return function(num){
-                      //that.scrollEle.style[that.supports.translate] = "translate3d(0px,"+ num +"px,0px)";
                       that.scrollEle.style[that.supports.translate] = "translate3d(0px,"+ num +"px,0px)";
                   }
               }else{
                   return function(num){
-                      //that.scrollEle.style[that.supports.translate] = "translate3d("+ num +"px,0px,0px)";
                       that.scrollEle.style[that.supports.translate] = "translate3d("+ num +"px,0px,0px)";
                   }
               }
           })();
 
-          //that.currentPage = -that.pageWidth*(that.centerMode ? 2 : 1);
           that.currentPage = -that._fix.fixTOPage;
           //使初始化的第一页为非克隆页
           that.setTransFn(-that._fix.fixTOPage+that.clipSize);
           that.currentIndex = Math.abs((that.currentPage+that._fix.fixOZPage)/that.pageSize);
-
 
           //启动滑动监听
           that._move();
@@ -295,14 +294,12 @@ void function (window,s,undefined){
           });
 
           //设置滚动页父容器的宽度
-          //that.scrollEle.style.width = (that.centerMode? that.length+4 : that.length+2) * that.pageWidth+"px";
           that.isVertical ?
               that.scrollEle.style.height = (that.centerMode? that.length+4 : that.length+2) * that.pageHeight+"px" :
               that.scrollEle.style.width = (that.centerMode? that.length+4 : that.length+2) * that.pageWidth+"px";
 
           that._addClass(that.scrollEle.lastElementChild,"s_turnsClone");
           that._addClass(that.scrollEle.firstElementChild,"s_turnsClone");
-
 
           //开始轮播
           that.start();
@@ -320,14 +317,16 @@ void function (window,s,undefined){
 
           //动画用
           this.aniTimer = null;
-          //that.sUtils = sUtils;
         },
         //滑动事件处理
         _move:function(){
           var that = this,isDown = false,
-              downX = 0, downY= 0,  //按下鼠标或者开始触摸时的坐标
-              moveX = 0,moveY = 0,    //按下鼠标或者开始触摸后移动的坐标
-              changeX = 0,changeY = 0;    //上两组数据之间变化的差值
+              //按下鼠标或者开始触摸时的坐标
+              downX = 0, downY= 0,
+              //按下鼠标或者开始触摸后移动的坐标
+              moveX = 0,moveY = 0,
+              //上两组数据之间变化的差值
+              changeX = 0,changeY = 0;
 
           //开始拖拽事件监听
           that.mainEle.addEventListener(that.supports.evtStart,function(e){
@@ -345,13 +344,6 @@ void function (window,s,undefined){
                   moveY = that.supports.hasTouch ? e.touches[0].clientY : e.clientY;
                   changeX = moveX - downX;
                   changeY = moveY - downY;
-                  //TODO
-                 /* clearTimeout(that.aniTimer);
-                  that.aniTimer = null;
-                  that.aniTimer = setTimeout(function(){
-                      that.setTransFn(that.currentPage+(that.isVertical ? changeY : changeX)+that.clipSize);
-                      that.onScroll && that.onScroll.call(that,that.currentIndex,{moveX:moveX,moveY:moveY});
-                  },5);*/
 
                   that.setTransFn(that.currentPage+(that.isVertical ? changeY : changeX)+that.clipSize);
                   that.onScroll && that.onScroll.call(that,that.currentIndex,{moveX:moveX,moveY:moveY});
@@ -361,7 +353,7 @@ void function (window,s,undefined){
           });
 
           //拖拽事件结束监听
-            that.mainEle.addEventListener(that.supports.evtEnd,function(e){
+          that.mainEle.addEventListener(that.supports.evtEnd,function(e){
               isDown = false;
 
               //如果不是无缝轮播的情况下： 轮播到第一页则再不能左划，最后一页则不能右划
@@ -376,7 +368,6 @@ void function (window,s,undefined){
               if(Math.abs((that.isVertical ? changeY : changeX)) > that.boundary){
                   changedPX > 0 ? that.prev() : that.next();
               }else{
-
                   //滑动无差值或者点击则不触发动画
                   if(changedPX !== 0){
                       that.animate && that._ani();
@@ -407,7 +398,7 @@ void function (window,s,undefined){
           });
         },
 
-        //兼容模块  TODO
+        //兼容模块
         _fix : function(){
             this._fix = {
                 fixTOPage : (this.centerMode?2:1) * this.pageSize,
@@ -415,6 +406,7 @@ void function (window,s,undefined){
                 fixOZPage : (this.centerMode?1:0) * this.pageSize
             }
         },
+
         //补间模块
         _ani : function(){
             var _ = this;
@@ -426,16 +418,19 @@ void function (window,s,undefined){
                 //_.scrollEle.style.WebkitTransition = "";
             },_.during)
         },
+
         //scrollBy 滚动多少距离
         scrollBy : function(pxNum){
             this.animate && this._ani();
             this.setTransFn(this.currentPage+pxNum);
         },
+
         //scrollTo 滚动到哪里
         scrollTo : function(pxNum){
             this.animate && this._ani();
             this.setTransFn(pxNum);
         },
+
         //scrollTo 滚动到指定页
         scrollToPage : function(pageNum){
             this.animate && this._ani();
@@ -446,6 +441,7 @@ void function (window,s,undefined){
 
             this.currentPage = -this.pageSize*(pageNum+this._fix.fixOZ);
         },
+
         //开始动画
         start : function(){
             var _ = this;
@@ -590,7 +586,7 @@ void function (window,s,undefined){
             obj._removeClass(this,obj.pointerActiveClass);
         });
         obj._addClass(children[obj.currentIndex-1],obj.pointerActiveClass);
-    }
+    };
 
 
     // 运动函数
@@ -681,7 +677,7 @@ void function (window,s,undefined){
 
             });
         },obj.during);
-    }
+    };
 
     return Sturns;
 });
