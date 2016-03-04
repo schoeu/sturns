@@ -3,7 +3,11 @@
 > 原生js轮播图插件，不依赖其他库,适用于移动端或现代浏览器。
 > API丰富，简单易用。
 
-- [DEMO](http://schoeu.qiniudn.com/sturns.html)
+---
+
+- [DEMO在这里~~](http://schoeu.qiniudn.com/sturns.html)
+
+---
 
 ## Setting
 
@@ -111,6 +115,8 @@
 - 类型: number
 - 轮播区域的高度
 
+---
+
 ## Events
 
 ### onScroll
@@ -137,6 +143,8 @@
 - 类型: function
 - 默认: undefined
 - 轮播开始时的回调函数
+
+---
 
 ## Method
 
