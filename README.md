@@ -147,28 +147,28 @@
 
 ## Method
 
-### prev
+### prev()
 - 轮播到上一页
 
-### next
+### next()
 - 轮播到下一页
 
-### scrollBy
+### scrollBy(number)
 - 参数: number
 - 相对滚动多少像素
 
-### scrollTo
+### scrollTo(number)
 - 参数: number
 - 相对于轮播父元素滚动多少像素
 
-### scrollToPage
+### scrollToPage(number)
 - 参数: number
 - 滚动到第几页
 
-### start
+### start()
 - 参数: 无
 - 开始轮播
 
-### stop
+### stop()
 - 参数: 无
 - 停止轮播
