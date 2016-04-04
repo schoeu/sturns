@@ -4,7 +4,7 @@
 > API丰富，简单易用。
 
 
-[DEMO在这里~~](http://static.schoeu.com/sturns.html)
+[DEMO在这里~~](http://static.schoeu.com/examples/sturns.html)
 
 ---
 
