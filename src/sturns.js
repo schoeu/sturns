@@ -21,7 +21,13 @@ void function (window,s,undefined){
 
 }(window,function(window,undefined){
     'use strict';
-
+    
+    var POINTER_CLS = 's_turnsPointerClass';
+    var ACTIVE_CLS = 'sturns_active';
+    var INDI_ACTIVE_CLS = 's_indi_active';
+    var INCTOR_CLS = 's_indicator';
+    var MODEL_SCALE = 0.85; 
+    
     var isModelClass = typeof window.document.body.classList !== "undefined";
 
     var Sturns = function(selector,options){
@@ -71,17 +77,17 @@ void function (window,s,undefined){
             this.direction = options.direction || "ltr";
 
             //滚动时的回调函数
-            this.onScroll = options.onScroll || undefined;
+            this.onScroll = options.onScroll;
 
             //当前页滚动完成之前的回调函数
-            this.onScrollBeforeEnd = options.onScrollBeforeEnd || undefined;
+            this.onScrollBeforeEnd = options.onScrollBeforeEnd;
 
             //当前页滚动完成的回调函数
-            this.onScrollEnd = options.onScrollEnd || undefined;
+            this.onScrollEnd = options.onScrollEnd;
             //当前页滚动开始时的回调函数
-            this.onScrollStart = options.onScrollStart || undefined;
+            this.onScrollStart = options.onScrollStart;
             //当前页滚动开始之前的回调函数
-            this.onScrollBeforeStart = options.onScrollBeforeStart || undefined;
+            this.onScrollBeforeStart = options.onScrollBeforeStart;
             //是否自动轮播 Boolean值
             this.autoplay = options.autoplay === false ? false : true;
 
@@ -92,7 +98,7 @@ void function (window,s,undefined){
              * 当前页滚动多少像素则判定滑到下一页
              * int值，默认为当前页宽度的六分之一
              * **/
-            this.boundary = parseInt(options.boundary) || (this.isVertical ? this.mainEleH : this.mainEleW)/6;
+            this.boundary = parseInt(options.boundary, 10) || (this.isVertical ? this.mainEleH : this.mainEleW)/6;
 
             //用于换页时判断是否循环
             this.prevBoundary = this.boundary;
@@ -111,23 +117,23 @@ void function (window,s,undefined){
             this.pointer = options.pointer === false ? false : true;
 
             //默认的滚动页指示器小圆点的样式， 传入CSS样式类名字符串。
-            this.pointerClass = options.pointerClass || "s_turnsPointerClass";
+            this.pointerClass = options.pointerClass || POINTER_CLS;
 
             //当前的滚动页的样式， 传入CSS样式类名字符串。
-            this.activeClass = options.activeClass || "sturns_active";
+            this.activeClass = options.activeClass || ACTIVE_CLS;
 
             //当前的滚动页指示器小圆点的样式， 传入CSS样式类名字符串。
-            this.pointerActiveClass = options.pointerActiveClass || "s_indi_active";
+            this.pointerActiveClass = options.pointerActiveClass || INDI_ACTIVE_CLS;
 
             //滚动页指示器的整体位置，传入CSS样式类名字符串
-            this.pointerPosition = options.pointerPosition || "s_indicator";
+            this.pointerPosition = options.pointerPosition || INCTOR_CLS;
 
             //是否启用循环模式，默认为启用
             this.circle = options.circle === false ? false : true;
 
             //启用居中模式后，当前页与非居中模式页面的宽度比
             //范围为0~1之间的小数，默认为 0.85
-            centerModeScale = options.centerModeScale || 0.85;
+            centerModeScale = options.centerModeScale || MODEL_SCALE;
             this.centerModeScale = centerModeScale > 1 ? 1 : centerModeScale;
 
             //动画缓动曲线
@@ -135,7 +141,7 @@ void function (window,s,undefined){
 
             //动画持续时长
             this.during = (options.during || 500);
-            this.duringSec = this.during/1000;
+            this.duringSec = this.during / 1000;
 
             //自动轮播的时间间隔，以毫秒为单位
             this.autoplaySpeed = (options.autoplaySpeed || 3000) + this.during;
