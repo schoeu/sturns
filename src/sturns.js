@@ -497,7 +497,7 @@ void function (window,s,undefined){
 
         //上一页
         prev : function(){
-            if(/*this.isBoundary &&*/!this.circle && this.currentIndex === 1){
+            if(!this.circle && this.currentIndex === 1){
                 return;
             }else{
                 this.direction = "rtl";
@@ -507,7 +507,7 @@ void function (window,s,undefined){
 
         //下一页
         next : function(){
-            if(/*this.isBoundary &&*/ !this.circle && this.currentIndex === this.length){
+            if(!this.circle && this.currentIndex === this.length){
                 return;
             }else{
                 this.direction = "ltr";
@@ -574,15 +574,16 @@ void function (window,s,undefined){
 
     //校正中心模式下动画效果
     var fixCenterMode = function(o){
+        var scrollEle = o.scrollEle;
         //如果是居中模式，则前端和后端分别克隆两个节点
-        o.scrollEle.appendChild(o.scrollEle.children[2].cloneNode(true));
-        o.scrollEle.insertBefore(o.scrollEle.lastElementChild.previousElementSibling
+        scrollEle.appendChild(scrollEle.children[2].cloneNode(true));
+        scrollEle.insertBefore(scrollEle.lastElementChild.previousElementSibling
                 .previousElementSibling.previousElementSibling.cloneNode(true),
-            o.scrollEle.firstElementChild);
+            scrollEle.firstElementChild);
 
         //标识为克隆节点对象
-        o._addClass(o.scrollEle.lastElementChild.previousElementSibling,"s_turnsClone");
-        o._addClass(o.scrollEle.firstElementChild.nextElementSibling,"s_turnsClone");
+        o._addClass(scrollEle.lastElementChild.previousElementSibling,"s_turnsClone");
+        o._addClass(scrollEle.firstElementChild.nextElementSibling,"s_turnsClone");
     }
 
     //指示器运作方法
