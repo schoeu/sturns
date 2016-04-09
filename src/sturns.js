@@ -10,13 +10,13 @@ void function (window,s,undefined){
     //兼容AMD模式
     if (typeof define === 'function' && define.amd) {
         define(function(){
-            return s(window,undefined);
+            return s(window, undefined);
         });
     } else if (typeof exports !== 'undefined') {
-        module.exports = s(window,undefined);
+        module.exports = s(window, undefined);
     } else {
         //绑定全局变量window
-        window.Sturns || (window.Sturns = s(window,undefined));
+        window.Sturns || (window.Sturns = s(window, undefined));
     }
 
 }(window,function(window,undefined){
@@ -197,7 +197,8 @@ void function (window,s,undefined){
 
           //公用修正
           that._fix();
-
+          
+          // Opera已入webkit行列，之后可以删掉
           var vendor = {
               'Webkit': 'WebkitTransform',
               'Moz': 'MozTransform',
@@ -320,7 +321,6 @@ void function (window,s,undefined){
 
           that.run = run;
 
-
           //动画用
           this.aniTimer = null;
         },
@@ -366,7 +366,7 @@ void function (window,s,undefined){
               if(!that.circle){
                   if((that.currentIndex === 1 && that.isBoundary && (that.isVertical ? changeY : changeX) > 0) ||
                       (that.currentIndex === that.length && that.isBoundary && (that.isVertical ? changeY : changeX) < 0)){
-                      that.boundary = that.mainEleW*this.length;
+                      that.boundary = that.mainEleW * this.length;
                   }
               }
               //滑动时判定边界
@@ -467,7 +467,7 @@ void function (window,s,undefined){
             _.mainEle.appendChild(s_indicator);
             _.s_indicator = _.mainEle.querySelector(".s_indicator>div");
 
-            for(var i= 0,l = this.length;i<l;i++){
+            for(var i= 0,l = _.length;i<l;i++){
                 insertHtml += "<div></div>"
             }
             _.s_indicator.innerHTML = insertHtml;
@@ -516,6 +516,7 @@ void function (window,s,undefined){
         },
 
         //class工具方法 为了兼容IE89,安卓2.3
+        //TODO 之后删掉
         _addClass:(function(){
             if(isModelClass){
                 return function(el,cls){
@@ -601,9 +602,7 @@ void function (window,s,undefined){
         //方向处理
         obj.moveRange = obj.direction === "rtl" ? obj.pageSize : -obj.pageSize;
 
-        var beforeNum = (obj.currentIndex+(obj.centerMode?0:1))%obj.length+1;
-        //滚动前回调
-        //obj.onScrollBeforeStart && obj.onScrollBeforeStart.call(obj,beforeNum);
+        var beforeNum = (obj.currentIndex + (obj.centerMode?0:1)) % obj.length + 1;
 
         //滚动时回调
         obj.onScrollStart && obj.onScrollStart.call(obj,beforeNum);
@@ -617,7 +616,6 @@ void function (window,s,undefined){
         setTimeout(function(){
             var objLth = obj.length+2;
 
-            //TODO
             //从左向右滚动时，如果滚动到克隆页，则跳转到对应的非克隆页
             if(obj.circle){
                 if(obj.currentPage == ((obj.centerMode?0:1)-objLth)*obj.pageSize) {
